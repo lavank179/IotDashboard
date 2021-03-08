@@ -1,73 +1,53 @@
-<div class="position-sticky pt-3">
-    <ul class="nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-                <span data-feather="home"></span>
-                Dashboard
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="file"></span>
-                Orders
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="shopping-cart"></span>
-                Products
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="users"></span>
-                Customers
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="bar-chart-2"></span>
-                Reports
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
-                Integrations
-            </a>
-        </li>
-    </ul>
-
-    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-        <span>Saved reports</span>
-        <a class="link-secondary" href="#" aria-label="Add a new report">
-            <span data-feather="plus-circle"></span>
-        </a>
-    </h6>
-    <ul class="nav flex-column mb-2">
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Current month
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Last quarter
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Social engagement
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Year-end sale
-            </a>
-        </li>
-    </ul>
+<div class="sidebar-header">
+    <h3>Bootstrap Sidebar</h3>
 </div>
+
+<ul class="list-unstyled components">
+    <p>Dummy Heading</p>
+    <li class="active">
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li>
+                <a href="#">Home 1</a>
+            </li>
+            <li>
+                <a href="#">Home 2</a>
+            </li>
+            <li>
+                <a href="#">Home 3</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">About</a>
+    </li>
+    <li>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+            <li>
+                <a href="#">Page 1</a>
+            </li>
+            <li>
+                <a href="#">Page 2</a>
+            </li>
+            <li>
+                <a href="#">Page 3</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">Portfolio</a>
+    </li>
+    <li>
+        <a href="#">Contact</a>
+    </li>
+</ul>
+
+<ul class="list-unstyled CTAs">
+    <li>
+        <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+    </li>
+    <li>
+        <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+    </li>
+</ul>

@@ -85,11 +85,18 @@ function drawChart() {
     title: "Company Performance",
     curveType: "function",
     legend: { position: "bottom" },
+    chartArea: {width: '500px', height: '250px'}
   };
 
   var chart = new google.visualization.LineChart(
-    document.getElementById("content")
+    document.getElementById("chart1")
   );
 
   chart.draw(data, options);
 }
+
+$(document).ready(function () {
+  $('#sidebarCollapse').on('click', function () {
+      $('#sidebar').toggleClass('active');
+  });
+});

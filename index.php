@@ -9,93 +9,52 @@
 
 <body>
 
-    <div class="container-fluid">
-        <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                <?php include('./headers/sidebar.php'); ?>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+
+            <?php include('./headers/sidebar.php'); ?>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
 
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="">
+                <?php include('./pages/home.php'); ?>
+            </div>
 
-                <div class="position-fixed top-0 end-0 p-3" style="z-index: 5">
-                    <div class="toast1" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                            <img src="..." class="rounded me-2" alt="...">
-                            <strong class="me-auto">Bulb 1 - ON</strong>
-                            <small>11 mins ago</small>
-                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-                        <div class="toast-body">
-                            Bulb 1 is turned on
-                        </div>
-                    </div>
-                </div>
-
-                <div class="position-fixed top-0 end-0 p-3" style="z-index: 5">
-                    <div class="toast2" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                            <img src="..." class="rounded me-2" alt="...">
-                            <strong class="me-auto">Bulb 1 - OFF</strong>
-                            <small>11 mins ago</small>
-                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-                        <div class="toast-body">
-                            Bulb 1 is turned off
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container">
-
-
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-title" style="text-align: center;">
-                                <h2>IoT Dashboard</h2>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="card text-center py-5">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <label class="switch">
-                                        <input class="onoff but" type="checkbox" checked id="111">
-                                        <span class="round"> </span>
-                                    </label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <h4> Led 1 </h4>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <label class="switch">
-                                        <input class="onoff but" type="checkbox" checked id="112">
-                                        <span class="round"> </span>
-                                    </label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <h4> Led 2 </h4>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-sm-4"></div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content">
-                        <div id="content" style="width: 800px; height: 400px;">
-                        </div>
-                    </div>
-                </div>
-            </main>
         </div>
-
 
 
     </div>
@@ -104,17 +63,18 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+
 
 
     <script src="https://www.gstatic.com/charts/loader.js"></script>
 
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+    <script src="./assets/MDBootstrap-pro/MDB-Pro_4.11.0/js/mdb.min.js"></script>
     <script type="text/javascript" src="./js/log.js"></script>
 </body>
 
