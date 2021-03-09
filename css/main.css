@@ -197,7 +197,6 @@ a.article:hover {
     CONTENT STYLE
 ----------------------------------------------------- */
 #content {
-  padding: 20px;
   min-height: 100vh;
   transition: all 0.3s;
 }
@@ -259,4 +258,12 @@ a.article:hover {
   #sidebarCollapse span {
     display: none;
   }
+}
+
+
+/* top navbar */
+
+#topNAV .btn-rounded1{
+  border-radius: 10px;
+  background-color: white;
 }

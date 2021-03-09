@@ -1,45 +1,19 @@
 <div class="sidebar-header">
-    <h3>Bootstrap Sidebar</h3>
+    <h3> IoT Dashboard </h3>
 </div>
 
-<ul class="list-unstyled components">
-    <p>Dummy Heading</p>
-    <li class="active">
-        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-        <ul class="collapse list-unstyled" id="homeSubmenu">
-            <li>
-                <a href="#">Home 1</a>
-            </li>
-            <li>
-                <a href="#">Home 2</a>
-            </li>
-            <li>
-                <a href="#">Home 3</a>
-            </li>
-        </ul>
+<ul class="list-unstyled components men">
+    <li class="nav-item active">
+        <a class="home"> Home </a>
     </li>
-    <li>
-        <a href="#">About</a>
+    <li class="nav-item">
+        <a class="visualise"> Visualise </a>
     </li>
-    <li>
-        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-        <ul class="collapse list-unstyled" id="pageSubmenu">
-            <li>
-                <a href="#">Page 1</a>
-            </li>
-            <li>
-                <a href="#">Page 2</a>
-            </li>
-            <li>
-                <a href="#">Page 3</a>
-            </li>
-        </ul>
+    <li class="nav-item">
+        <a class="profile"> Profile </a>
     </li>
-    <li>
-        <a href="#">Portfolio</a>
-    </li>
-    <li>
-        <a href="#">Contact</a>
+    <li class="nav-item">
+        <a class="contact"> Contact </a>
     </li>
 </ul>
 

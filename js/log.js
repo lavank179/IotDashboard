@@ -1,32 +1,11 @@
+$("#visualise").hide();
+$("#profile").hide();
+$("#contact").hide();
+
 const switchB = document.querySelector("#onoff");
 
-// switchB.addEventListener("change", function () {
 
-//     var toastElList1 = [].slice.call(document.querySelectorAll(".toast1"));
-//     var toastList1 = toastElList1.map(function (toastEl) {
-//       return new bootstrap.Toast(toastEl);
-//     });
-
-//     var toastElList2 = [].slice.call(document.querySelectorAll(".toast2"));
-//     var toastList2 = toastElList2.map(function (toastEl) {
-//       return new bootstrap.Toast(toastEl);
-//     });
-
-//   if (this.checked) {
-
-//     updateB1('on');
-
-//     toastList2.forEach(toast => toast.hide());
-//     toastList1.forEach(toast => toast.show());
-//   }
-//   else{
-
-//     updateB1('off');
-//     toastList1.forEach(toast => toast.hide());
-//     toastList2.forEach(toast => toast.show());
-//   }
-// });
-
+// switch button toggle - LEDs
 document.querySelectorAll(".onoff").forEach((item) => {
   item.addEventListener("change", (event) => {
     var toastElList1 = [].slice.call(document.querySelectorAll(".toast1"));
@@ -52,6 +31,8 @@ document.querySelectorAll(".onoff").forEach((item) => {
   });
 });
 
+
+// ajax for switch toggle with JSON
 function updateB1(id, val) {
   $.ajax({
     url: "./update.php",
@@ -67,6 +48,7 @@ function updateB1(id, val) {
     },
   });
 }
+
 
 // chart example
 google.charts.load("current", { packages: ["corechart"] });
@@ -85,7 +67,7 @@ function drawChart() {
     title: "Company Performance",
     curveType: "function",
     legend: { position: "bottom" },
-    chartArea: {width: '500px', height: '250px'}
+    chartArea: {width: '100%', height: '100%'}
   };
 
   var chart = new google.visualization.LineChart(
@@ -99,4 +81,25 @@ $(document).ready(function () {
   $('#sidebarCollapse').on('click', function () {
       $('#sidebar').toggleClass('active');
   });
+});
+
+
+
+
+// toggle between dashboard pages
+$('.men a').on('click', function(e) {
+  e.preventDefault()
+  let alinks = ['home', 'visualise', 'profile', 'contact'];
+  for(var i = 0; i < alinks.length; i++){
+    if(alinks[i] == this.className){
+      $("#" + alinks[i]).show();
+      var p = document.querySelector("." + alinks[i]).parentElement;
+      p.classList.add('active');
+    } else {
+      $("#" + alinks[i]).hide();
+      var p = document.querySelector("." + alinks[i]).parentElement;
+      p.classList.remove('active');
+    }
+  }
+  // console.log(this.className);
 });

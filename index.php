@@ -13,45 +13,39 @@
     <div class="wrapper">
         <!-- Sidebar Holder -->
         <nav id="sidebar">
-
             <?php include('./headers/sidebar.php'); ?>
         </nav>
 
         <!-- Page Content Holder -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-dark bg-light">
-                <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark" id="topNAV">
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Toggle Sidebar</span>
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-right"></i>
-                    </button>
+                <button type="button" id="sidebarCollapse" class="btn btn-light">
+                    <i class="fas fa-align-left"></i>
+                </button>
+                <button class="btn btn-light d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-align-right"></i>
+                </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-light btn-rounded1"> <i class="far fa-bell"></i> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-light btn-rounded1"> <i class="fas fa-user-circle"></i> </a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
 
-            <div class="">
-                <?php include('./pages/home.php'); ?>
+            <div class="container-fluid">
+                <div id="home"><?php include('./pages/home.php'); ?></div>
+                <div id="visualise"><?php include('./pages/visualise.php'); ?></div>
+                <div id="profile"><?php include('./pages/profile.php'); ?></div>
+
+
             </div>
 
         </div>
