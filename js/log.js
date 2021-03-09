@@ -4,7 +4,6 @@ $("#contact").hide();
 
 const switchB = document.querySelector("#onoff");
 
-
 // switch button toggle - LEDs
 document.querySelectorAll(".onoff").forEach((item) => {
   item.addEventListener("change", (event) => {
@@ -31,7 +30,6 @@ document.querySelectorAll(".onoff").forEach((item) => {
   });
 });
 
-
 // ajax for switch toggle with JSON
 function updateB1(id, val) {
   $.ajax({
@@ -49,56 +47,81 @@ function updateB1(id, val) {
   });
 }
 
+// // chart example
+// google.charts.load("current", { packages: ["corechart"] });
+// google.charts.setOnLoadCallback(drawChart);
 
-// chart example
-google.charts.load("current", { packages: ["corechart"] });
+// function drawChart() {
+//   var data = google.visualization.arrayToDataTable([
+//     ["Year", "Sales", "Expenses"],
+//     ["2004", 1000, 400],
+//     ["2005", 1170, 460],
+//     ["2006", 660, 1120],
+//     ["2007", 1030, 540],
+//   ]);
+
+//   var options = {
+//     title: "Company Performance",
+//     curveType: "function",
+//     legend: { position: "bottom" },
+//     chartArea: {width: '100%', height: '100%'}
+//   };
+
+//   var chart = new google.visualization.LineChart(
+//     document.getElementById("chart1")
+//   );
+
+//   chart.draw(data, options);
+// }
+
+google.charts.load("current", { packages: ["gauge"] });
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
-    ["Year", "Sales", "Expenses"],
-    ["2004", 1000, 400],
-    ["2005", 1170, 460],
-    ["2006", 660, 1120],
-    ["2007", 1030, 540],
+    ["Label", "Value"],
+    ["Memory", 80],
   ]);
 
   var options = {
-    title: "Company Performance",
-    curveType: "function",
-    legend: { position: "bottom" },
-    chartArea: {width: '100%', height: '100%'}
+    width: 400,
+    height: 120,
+    redFrom: 90,
+    redTo: 100,
+    yellowFrom: 75,
+    yellowTo: 90,
+    minorTicks: 5,
   };
 
-  var chart = new google.visualization.LineChart(
-    document.getElementById("chart1")
-  );
+  var chart = new google.visualization.Gauge(document.getElementById("chart1"));
 
   chart.draw(data, options);
+
+  setInterval(function () {
+    data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+    chart.draw(data, options);
+  }, 13000);
 }
 
 $(document).ready(function () {
-  $('#sidebarCollapse').on('click', function () {
-      $('#sidebar').toggleClass('active');
+  $("#sidebarCollapse").on("click", function () {
+    $("#sidebar").toggleClass("active");
   });
 });
 
-
-
-
 // toggle between dashboard pages
-$('.men a').on('click', function(e) {
-  e.preventDefault()
-  let alinks = ['home', 'visualise', 'profile', 'contact'];
-  for(var i = 0; i < alinks.length; i++){
-    if(alinks[i] == this.className){
+$(".men a").on("click", function (e) {
+  e.preventDefault();
+  let alinks = ["home", "visualise", "profile", "contact"];
+  for (var i = 0; i < alinks.length; i++) {
+    if (alinks[i] == this.className) {
       $("#" + alinks[i]).show();
       var p = document.querySelector("." + alinks[i]).parentElement;
-      p.classList.add('active');
+      p.classList.add("active");
     } else {
       $("#" + alinks[i]).hide();
       var p = document.querySelector("." + alinks[i]).parentElement;
-      p.classList.remove('active');
+      p.classList.remove("active");
     }
   }
   // console.log(this.className);
