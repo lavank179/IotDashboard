@@ -14,7 +14,7 @@
 
     <div class="row">
         <div class="col-sm-4 col-md-4 col-lg-4">
-            <div class="card text-center py-5" id="ledCollection" style="background: transparent;">
+            <div class="card text-center py-5" style="background: transparent;">
                 <table class="table table-bordered">
 
 
@@ -35,17 +35,28 @@
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
-                                        <div class="modal-content">
+                                        <div class="modal-content text-center">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                                                <h5 class="modal-title" id="exampleModalLabel"> Add a Device </h5>
+                                                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" style="border: none; background: transparent;"><i class="fas fa-times"></i></button>
                                             </div>
-                                            <div class="modal-body">...</div>
+                                            <div class="modal-body">
+                                                <!-- Name -->
+                                                <div class="md-form mt-3">
+                                                    <input type="text" id="form-Dname" class="form-control" name="name" placeholder="for ex. Light1 or Fan1">
+                                                    <label for="form-firstname">Name</label>
+                                                </div>
+                                                <!-- Last-Name -->
+                                                <div class="md-form">
+                                                    <input type="text" id="form-Did" class="form-control" name="ID" placeholder="for ex. 111 or 112">
+                                                    <label for="form-lastname"> ID </label>
+                                                </div>
+                                            </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                     Close
                                                 </button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                <button type="button" class="btn btn-primary" id="subAdd">Save changes</button>
                                             </div>
                                         </div>
                                     </div>
@@ -59,19 +70,7 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>
-                                <h4> Led 1 </h4>
-                            </td>
-                            <td>
-                                <label class="switch">
-                                    <input class="onoff but" type="checkbox" checked id="111">
-                                    <span class="round"> </span>
-                                </label>
-                            </td>
-                        </tr>
+                    <tbody id="devicesCollection">
                     </tbody>
                 </table>
 

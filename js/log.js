@@ -1,6 +1,7 @@
 $("#visualise").hide();
 $("#profile").hide();
 $("#contact").hide();
+getSwitch(0);
 
 const switchB = document.querySelector("#onoff");
 
@@ -126,3 +127,79 @@ $(".men a").on("click", function (e) {
   }
   // console.log(this.className);
 });
+
+// Add a device control
+$("#subAdd").on("click", function () {
+  let Dname = document.querySelector("#form-Dname").value;
+  let Did = document.querySelector("#form-Did").value;
+
+  const k = updateB2(Dname, parseInt(Did));
+
+  if (k == "success") {
+    console.log(k);
+    getSwitch(1);
+  } else {
+    alert("Error: " + k);
+  }
+});
+
+// ajax for adding button to JSON
+function updateB2(val1, val2) {
+  console.log(typeof val2);
+  var d1;
+  $.ajax({
+    async: false,
+    url: "./update.php",
+    method: "POST",
+    data: {
+      dName: val1,
+      dId: val2,
+    },
+    success: function (data) {
+      d1 = data;
+    },
+  });
+
+  return d1;
+}
+
+// ajax for getting and creating switch buttons from JSON
+function getSwitch(ts) {
+  $.ajax({
+    url: "./data.json",
+    method: "POST",
+    success: function (data) {
+      let count = Object.keys(data).length;
+
+      // creating a table row for new switch
+
+      if (ts === 0) {
+        for (let i = 0; i < count; i++) {
+          printRow(data[i]["name"], data[i]["id"]);
+        }
+      } else if (ts === 1) {
+        printRow(data[count - 1]["name"], data[count - 1]["id"]);
+      }
+    },
+  });
+}
+
+// print row element
+function printRow(v1, v2) {
+  let coll = document.querySelector("#devicesCollection");
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<tr>
+                          <th scope="row">  </th>
+                            <td>
+                                <h4> ${v1} </h4>
+                            </td>
+                          <td>
+                            <label class="switch">
+                                <input class="onoff but" type="checkbox" checked id="${v2}">
+                                <span class="round"> </span>
+                            </label>
+                          </td>
+                        </tr>`;
+
+  coll.appendChild(tr);
+}
