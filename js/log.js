@@ -3,11 +3,17 @@ $("#profile").hide();
 $("#contact").hide();
 getSwitch(0);
 
+$("#bologna-list a").on("click", function (e) {
+  e.preventDefault();
+  $(this).tab("show");
+});
+
 const switchB = document.querySelector("#onoff");
 
 // switch button toggle - LEDs
-document.querySelectorAll(".onoff").forEach((item) => {
-  item.addEventListener("change", (event) => {
+document.querySelectorAll("#home .onoff").forEach((item) => {
+  item.addEventListener("click", (event) => {
+    console.log(item);
     var toastElList1 = [].slice.call(document.querySelectorAll(".toast1"));
     var toastList1 = toastElList1.map(function (toastEl) {
       return new bootstrap.Toast(toastEl);
@@ -33,6 +39,7 @@ document.querySelectorAll(".onoff").forEach((item) => {
 
 // ajax for switch toggle with JSON
 function updateB1(id, val) {
+  console.log(id, val);
   $.ajax({
     url: "./update.php",
     method: "POST",
@@ -79,14 +86,26 @@ google.charts.load("current", { packages: ["gauge"] });
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
-  var data = google.visualization.arrayToDataTable([
+  var data1 = google.visualization.arrayToDataTable([
     ["Label", "Value"],
-    ["Memory", 80],
+    ["Lights", 100],
+  ]);
+  var data2 = google.visualization.arrayToDataTable([
+    ["Label", "Value"],
+    ["Refrigerator", 80],
+  ]);
+  var data3 = google.visualization.arrayToDataTable([
+    ["Label", "Value"],
+    ["Fans", 80],
+  ]);
+  var data4 = google.visualization.arrayToDataTable([
+    ["Label", "Value"],
+    ["AC", 80],
   ]);
 
   var options = {
     width: 400,
-    height: 120,
+    height: 200,
     redFrom: 90,
     redTo: 100,
     yellowFrom: 75,
@@ -94,15 +113,33 @@ function drawChart() {
     minorTicks: 5,
   };
 
-  var chart = new google.visualization.Gauge(document.getElementById("chart1"));
+  var chart1 = new google.visualization.Gauge(
+    document.getElementById("chart1")
+  );
+  var chart2 = new google.visualization.Gauge(
+    document.getElementById("chart2")
+  );
+  var chart3 = new google.visualization.Gauge(
+    document.getElementById("chart3")
+  );
+  var chart4 = new google.visualization.Gauge(
+    document.getElementById("chart4")
+  );
 
-  chart.draw(data, options);
+  chart1.draw(data1, options);
+  chart2.draw(data2, options);
+  chart3.draw(data3, options);
+  chart4.draw(data4, options);
 
   setInterval(function () {
     data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-    chart.draw(data, options);
+    chart1.draw(data1, options);
+    chart2.draw(data2, options);
+    chart3.draw(data3, options);
+    chart4.draw(data4, options);
   }, 13000);
 }
+
 
 $(document).ready(function () {
   $("#sidebarCollapse").on("click", function () {
@@ -188,18 +225,20 @@ function getSwitch(ts) {
 function printRow(v1, v2) {
   let coll = document.querySelector("#devicesCollection");
   const tr = document.createElement("tr");
-  tr.innerHTML = `<tr>
-                          <th scope="row">  </th>
+  tr.innerHTML = `<th scope="row">  </th>
                             <td>
                                 <h4> ${v1} </h4>
                             </td>
                           <td>
                             <label class="switch">
-                                <input class="onoff but" type="checkbox" checked id="${v2}">
+                                <input class="onoff" type="checkbox" checked id="${v2}">
                                 <span class="round"> </span>
                             </label>
-                          </td>
-                        </tr>`;
+                          </td>`;
 
   coll.appendChild(tr);
 }
+
+$("#\31 15").on("click", function () {
+  alert("ok");
+});

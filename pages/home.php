@@ -71,32 +71,73 @@
                         </tr>
                     </thead>
                     <tbody id="devicesCollection">
+                        <tr>
+                            <th scope="row"> </th>
+                            <td>
+                                <h4> Led11 </h4>
+                            </td>
+                            <td>
+                                <label class="switch">
+                                    <input class="onoff" type="checkbox" checked id="116">
+                                    <span class="round"> </span>
+                                </label>
+                            </td>
+                        </tr>`;
                     </tbody>
                 </table>
 
             </div>
             <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content</p>
         </div>
+
+
+
+
         <div class="col-sm-4 col-md-4 col-lg-4">
             <div class="card">
                 <div class="card-content">
-                    <div id="chart1">
+                    <div id="chart1" style="border: 2px black solid;">
                     </div>
+                    <p>No. Of Units: 200<br>
+                        No.of lights ON: 3 <br>
+                        Date: 11-03-2021 </p>
+
                 </div>
+
             </div>
-            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content</p>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
+            <br>
             <div class="card">
                 <div class="card-content">
                     <div id="chart2">
                     </div>
+                    <p>No. Of Units: 200<br>
+                        Date: 11-03-2021 </p>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="card">
+                <div class="card-content">
+                    <div id="chart3"></div>
+                    <p>No. Of Units: 200<br>
+                        No.of Fans ON: 3 <br>
+                        Date: 11-03-2021 </p>
                 </div>
             </div>
-            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content</p>
+            <br>
+            <div class="card">
+                <div class="card-content">
+                    <div id="chart4">
+                    </div>
+                    <p>Pressur applied: <br>
+                        No.of Units Generated: 200</p>
+                </div>
+
+            </div>
+
         </div>
-
-
     </div>
 
 </div>
