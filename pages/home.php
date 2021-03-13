@@ -71,18 +71,7 @@
                         </tr>
                     </thead>
                     <tbody id="devicesCollection">
-                        <tr>
-                            <th scope="row"> </th>
-                            <td>
-                                <h4> Led11 </h4>
-                            </td>
-                            <td>
-                                <label class="switch">
-                                    <input class="onoff" type="checkbox" checked id="116">
-                                    <span class="round"> </span>
-                                </label>
-                            </td>
-                        </tr>`;
+
                     </tbody>
                 </table>
 

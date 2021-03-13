@@ -8,53 +8,6 @@ $("#bologna-list a").on("click", function (e) {
   $(this).tab("show");
 });
 
-const switchB = document.querySelector("#onoff");
-
-// switch button toggle - LEDs
-document.querySelectorAll("#home .onoff").forEach((item) => {
-  item.addEventListener("click", (event) => {
-    console.log(item);
-    var toastElList1 = [].slice.call(document.querySelectorAll(".toast1"));
-    var toastList1 = toastElList1.map(function (toastEl) {
-      return new bootstrap.Toast(toastEl);
-    });
-
-    var toastElList2 = [].slice.call(document.querySelectorAll(".toast2"));
-    var toastList2 = toastElList2.map(function (toastEl) {
-      return new bootstrap.Toast(toastEl);
-    });
-
-    if (item.checked) {
-      updateB1(parseInt(item.id), "on");
-
-      toastList2.forEach((toast) => toast.hide());
-      toastList1.forEach((toast) => toast.show());
-    } else {
-      updateB1(parseInt(item.id), "off");
-      toastList1.forEach((toast) => toast.hide());
-      toastList2.forEach((toast) => toast.show());
-    }
-  });
-});
-
-// ajax for switch toggle with JSON
-function updateB1(id, val) {
-  console.log(id, val);
-  $.ajax({
-    url: "./update.php",
-    method: "POST",
-    data: {
-      name: id,
-      stat: val,
-    },
-    success: function (data) {
-      var d = JSON.parse(data);
-
-      $("#device-status h3").html(d[0]["status"]);
-    },
-  });
-}
-
 // // chart example
 // google.charts.load("current", { packages: ["corechart"] });
 // google.charts.setOnLoadCallback(drawChart);
@@ -140,7 +93,6 @@ function drawChart() {
   }, 13000);
 }
 
-
 $(document).ready(function () {
   $("#sidebarCollapse").on("click", function () {
     $("#sidebar").toggleClass("active");
@@ -182,7 +134,6 @@ $("#subAdd").on("click", function () {
 
 // ajax for adding button to JSON
 function updateB2(val1, val2) {
-  console.log(typeof val2);
   var d1;
   $.ajax({
     async: false,
@@ -225,20 +176,113 @@ function getSwitch(ts) {
 function printRow(v1, v2) {
   let coll = document.querySelector("#devicesCollection");
   const tr = document.createElement("tr");
-  tr.innerHTML = `<th scope="row">  </th>
-                            <td>
-                                <h4> ${v1} </h4>
-                            </td>
-                          <td>
-                            <label class="switch">
-                                <input class="onoff" type="checkbox" checked id="${v2}">
-                                <span class="round"> </span>
-                            </label>
-                          </td>`;
 
-  coll.appendChild(tr);
+  const th = document.createElement("th");
+  th.scope = "row";
+  th.innerHTML = '<a class="delete-item"><i class="fas fa-times"></i></a>';
+
+  const td1 = document.createElement("td");
+  td1.innerHTML = "<h4>" + v1 + "</h4>";
+
+  const td2 = document.createElement("td");
+  const label1 = document.createElement("label");
+  label1.className = "switch";
+
+  const inp = document.createElement("input");
+  inp.className = "onoff";
+  inp.type = "checkbox";
+  inp.id = v2;
+  inp.checked = true;
+
+  const sp = document.createElement("span");
+  sp.className = "round";
+
+  label1.appendChild(inp);
+  label1.appendChild(sp);
+  td2.appendChild(label1);
+
+  tr.appendChild(th);
+  tr.appendChild(td1);
+  tr.appendChild(td2);
+
+  coll.append(tr);
+
+  selectInputs();
+  remInputs();
 }
 
-$("#\31 15").on("click", function () {
-  alert("ok");
-});
+// switch button toggle - LEDs
+function selectInputs() {
+  document.querySelectorAll("#home .onoff").forEach((item) => {
+    item.addEventListener("click", (event) => {
+      var toastElList1 = [].slice.call(document.querySelectorAll(".toast1"));
+      var toastList1 = toastElList1.map(function (toastEl) {
+        return new bootstrap.Toast(toastEl);
+      });
+
+      var toastElList2 = [].slice.call(document.querySelectorAll(".toast2"));
+      var toastList2 = toastElList2.map(function (toastEl) {
+        return new bootstrap.Toast(toastEl);
+      });
+
+      if (item.checked) {
+        updateB1(parseInt(item.id), "on");
+
+        toastList2.forEach((toast) => toast.hide());
+        toastList1.forEach((toast) => toast.show());
+      } else {
+        updateB1(parseInt(item.id), "off");
+        toastList1.forEach((toast) => toast.hide());
+        toastList2.forEach((toast) => toast.show());
+      }
+    });
+  });
+}
+
+// ajax for switch toggle with JSON
+function updateB1(id, val) {
+  $.ajax({
+    url: "./update.php",
+    method: "POST",
+    data: {
+      name: id,
+      stat: val,
+    },
+    success: function (data) {
+      console.log(id + " is " + val + " : " + data);
+    },
+  });
+}
+
+// remove switch button selected
+function remInputs() {
+  $(document)
+    .off("click", "#devicesCollection")
+    .on("click", "#devicesCollection", function (e) {
+      if (e.target.parentElement.classList.contains("delete-item")) {
+        if (confirm("Are You Sure?")) {
+          const el =
+            e.target.parentElement.parentElement.parentElement.children[2]
+              .children[0].children[0].id;
+          let s;
+          $.ajax({
+            async: false,
+            url: "./update.php",
+            method: "POST",
+            data: {
+              dRem: "del",
+              dId: el,
+            },
+            success: function (data) {
+              s = data;
+            },
+          });
+          if (s == "success") {
+            e.target.parentElement.parentElement.parentElement.remove();
+          } else {
+            alert(s);
+          }
+        }
+      }
+    });
+}
