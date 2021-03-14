@@ -1,12 +1,1 @@
-[
-    {
-        "id": 111,
-        "name": "Led1",
-        "status": "on"
-    },
-    {
-        "id": 112,
-        "name": "Led2",
-        "status": "off"
-    }
-]
+[{"id":111,"name":"Led1","status":"on"},{"id":112,"name":"Led2","status":"on"}]

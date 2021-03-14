@@ -214,7 +214,7 @@ function printRow(v1, v2) {
 // switch button toggle - LEDs
 function selectInputs() {
   document.querySelectorAll("#home .onoff").forEach((item) => {
-    item.addEventListener("click", (event) => {
+    item.addEventListener("change", (event) => {
       var toastElList1 = [].slice.call(document.querySelectorAll(".toast1"));
       var toastList1 = toastElList1.map(function (toastEl) {
         return new bootstrap.Toast(toastEl);
@@ -286,3 +286,15 @@ function remInputs() {
       }
     });
 }
+
+// Or, pass the months and weekdays as an array for each invocation.
+$(".datepicker").pickadate({
+  format: "dd/mm/yyyy",
+  formatSubmit: "dd/mm/yyyy",
+});
+
+
+// Material Select Initialization
+$(document).ready(function() {
+  $('.mdb-select').materialSelect();
+  });

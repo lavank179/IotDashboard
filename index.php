@@ -70,6 +70,7 @@
 
     <script src="./assets/MDBootstrap-pro/MDB-Pro_4.11.0/js/mdb.min.js"></script>
     <script type="text/javascript" src="./js/log.js"></script>
+    <script type="text/javascript" src="./js/charts.js"></script>
 </body>
 
 </html>
