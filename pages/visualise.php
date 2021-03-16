@@ -47,7 +47,7 @@
 
                                 </div>
                             </div>
-                            <div id="line_chart1" style="width:100%; height: 394px;"></div>
+                            <div id="l1chart1" style="width:100%; height: 394px;"></div>
                             <a></a>
                         </div>
 

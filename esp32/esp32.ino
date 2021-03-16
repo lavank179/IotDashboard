@@ -1,11 +1,51 @@
-#include <WiFi.h>
-#include <HTTPClient.h>
-#include <ArduinoJson.h>
+#include<WiFi.h>
+#include<HTTPClient.h>
+#include<ArduinoJson.h>
+#include<NTPClient.h>
+#include<WiFiUdp.h>
  
 const char* ssid = "TIC_fiber-ram-lavan";
 const char* password =  "krizz.ch*9541";
-int l1 = 18;
-int l2 = 19;
+int l1 = 16;
+int l2 = 17;
+int l3 = 18;
+int l4 = 19;
+
+// Define NTP Client to get time
+WiFiUDP ntpUDP;
+NTPClient timeClient(ntpUDP, "pool.ntp.org");
+
+String sL1 = "";
+String sL2 = "";
+String sL3 = "";
+String sL4 = "";
+
+void uploadTime(int i, String s, String e){
+    HTTPClient http;
+    http.begin("http://192.168.0.106/dp/iot_dashboard/controllers/Ulights.php");
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    String httpRequestData = "id=" + String(i) + "&sTime=" + s + "&eTime=" + e + "";
+    int httpResponseCode = http.POST(httpRequestData);
+    if (httpResponseCode>0) {
+      Serial.print("httpRequestData: ");
+      Serial.println(httpRequestData);
+      
+    }
+    else {
+      Serial.print("httpRequestData: ");
+      Serial.println(httpRequestData);
+      
+    }
+
+    http.end(); //Free the resources
+    
+}
+
+String getTimeNtp(){
+  timeClient.update();
+  unsigned long epochTime = timeClient.getEpochTime();
+  return String(epochTime);
+  }
  
 void setup() {
  
@@ -13,6 +53,8 @@ void setup() {
   delay(1000);
   pinMode(l1, OUTPUT);
   pinMode(l2, OUTPUT);
+  pinMode(l3, OUTPUT);
+  pinMode(l4, OUTPUT);
   WiFi.begin(ssid, password);
  
   while (WiFi.status() != WL_CONNECTED) {
@@ -21,16 +63,31 @@ void setup() {
   }
  
   Serial.println("Connected to the WiFi network");
- 
+  // Initialize a NTPClient to get time
+  timeClient.begin();
+  timeClient.setTimeOffset(19800);
 }
 
 void ledControl(int idL, String stat){
-  if (stat == "on"){
+  if (stat == "on" && !digitalRead(idL)){
+    switch(idL){
+      case 16: sL1 = getTimeNtp();break;
+      case 17: sL2 = getTimeNtp();break;
+      case 18: sL3 = getTimeNtp();break;
+      case 19: sL4 = getTimeNtp();break;
+      }
+     
      Serial.print("status");
      Serial.println(idL);
      digitalWrite(idL, HIGH);
     }
-  else{
+  else if(stat == "off" && digitalRead(idL)) {
+    switch(idL){
+      case 16: uploadTime(idL, sL1, getTimeNtp());break;
+      case 17: uploadTime(idL, sL2, getTimeNtp());break;
+      case 18: uploadTime(idL, sL3, getTimeNtp());break;
+      case 19: uploadTime(idL, sL4, getTimeNtp());break;
+      }
     Serial.print("status");
     Serial.println(idL);
     digitalWrite(idL, LOW);
@@ -57,9 +114,13 @@ void loop() {
       deserializeJson(doc, json);
       String led1 = doc[0]["status"];
       String led2 = doc[1]["status"];
+      String led3 = doc[2]["status"];
+      String led4 = doc[3]["status"];
    
         ledControl(l1, led1);
         ledControl(l2, led2);
+        ledControl(l3, led3);
+        ledControl(l4, led4);
       }
  
     else {
@@ -68,6 +129,7 @@ void loop() {
     }
  
     http.end(); //Free the resources
+    
   }
  
   delay(1000);
