@@ -289,44 +289,11 @@ function remInputs() {
 
 // Or, pass the months and weekdays as an array for each invocation.
 $(".datepicker").pickadate({
-  format: "dd/mm/yyyy",
-  formatSubmit: "dd/mm/yyyy",
+  format: "yyyy-mm-dd",
+  formatSubmit: "yyyy-mm-dd",
 });
 
 // Material Select Initialization
 $(document).ready(function () {
   $(".mdb-select").materialSelect();
 });
-
-google.charts.load("current", { packages: ["corechart"] });
-google.charts.setOnLoadCallback(drawChart1);
-
-function drawChart1() {
-  var data = google.visualization.arrayToDataTable([
-    ["Month", "Units"],
-    ["January", "200"],
-    ["February", "200"],
-    ["March", "200"],
-    ["April", "200"],
-    ["May", "200"],
-    ["June", "200"],
-    ["July", "200"],
-    ["August", "200"],
-    ["September", "200"],
-    ["October", "200"],
-    ["November", "200"],
-    ["December", "200"],
-  ]);
-
-  var options = {
-    title: "Company Performance",
-    curveType: "function",
-    legend: { position: "bottom" },
-  };
-
-  var l1chart = new google.visualization.LineChart(
-    document.getElementById("l1chart1")
-  );
-
-  l1chart.draw(data, options);
-}

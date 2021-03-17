@@ -25,44 +25,118 @@
 
                         <div class="tab-pane" id="g1" role="tabpanel" aria-labelledby="history-tab">
                             <p class="card-text">LED 1 Data of the given time period:</p>
-                            <div class="row">
+                            <div class="row filterLight1">
                                 <div class="col-sm-2">
                                     <div class="md-form">
-                                        <input placeholder="From Date" type="date" id="Fdate" class="form-control datepicker filterLight1">
+                                        <input placeholder="From Date" type="date" id="Fdate" class="form-control datepicker">
                                     </div>
                                 </div>
                                 <div class="col-sm-2">
                                     <div class="md-form">
-                                        <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker filterLight1">
+                                        <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
                                     </div>
                                 </div>
                                 <div class="col-sm-4"></div>
                                 <div class="col-sm-4">
 
-                                    <select class="custom-select md-form filterLight1" required id="Fselect">
-                                        <option value="1"> Daily </option>
-                                        <option value="2"> Monthly </option>
-                                        <option value="3"> Yearly </option>
+                                    <select class="custom-select md-form" required id="Fselect">
+                                        <option value="date"> Daily </option>
+                                        <option value="month"> Monthly </option>
+                                        <option value="year"> Yearly </option>
                                     </select>
 
                                 </div>
                             </div>
-                            <div id="l1chart1" style="width:100%; height: 394px;"></div>
-                            <a></a>
+                            <div>
+                                <div id="l1chart" style="border: blue solid 2px;"></div>
+                            </div>
                         </div>
 
                         <div class="tab-pane" id="g2" role="tabpanel" aria-labelledby="deals-tab">
                             <p class="card-text">LED 2 Data of the given time period:</p>
-                            <div id="line_chart2" style="width:100%; height: 394px;"></div>
+
+                            <div class="row filterLight2">
+                                <div class="col-sm-2">
+                                    <div class="md-form">
+                                        <input placeholder="From Date" type="date" id="Fdate" class="form-control datepicker">
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="md-form">
+                                        <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+
+                                    <select class="custom-select md-form" required id="Fselect">
+                                        <option value="date"> Daily </option>
+                                        <option value="month"> Monthly </option>
+                                        <option value="year"> Yearly </option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div>
+                                <div id="l2chart" style="border: blue solid 2px;"></div>
+                            </div>
                         </div>
 
                         <div class="tab-pane" id="g3" role="tabpanel" aria-labelledby="deals-tab">
                             <p class="card-text">LED 3 Data of the given time period:</p>
-                            <div id="line_chart3" style="width:100%; height: 394px;"></div>
+                            <div class="row filterLight3">
+                                <div class="col-sm-2">
+                                    <div class="md-form">
+                                        <input placeholder="From Date" type="date" id="Fdate" class="form-control datepicker">
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="md-form">
+                                        <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+
+                                    <select class="custom-select md-form" required id="Fselect">
+                                        <option value="date"> Daily </option>
+                                        <option value="month"> Monthly </option>
+                                        <option value="year"> Yearly </option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div>
+                                <div id="l3chart" style="border: blue solid 2px;"></div>
+                            </div>
                         </div>
                         <div class="tab-pane" id="g4" role="tabpanel" aria-labelledby="deals-tab">
                             <p class="card-text">LED 4 Data of the given time period:</p>
-                            <div id="line_chart4" style="width:100%; height: 394px;"></div>
+                            <div class="row filterLight4">
+                                <div class="col-sm-2">
+                                    <div class="md-form">
+                                        <input placeholder="From Date" type="date" id="Fdate" class="form-control datepicker">
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="md-form">
+                                        <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+
+                                    <select class="custom-select md-form" required id="Fselect">
+                                        <option value="date"> Daily </option>
+                                        <option value="month"> Monthly </option>
+                                        <option value="year"> Yearly </option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div>
+                                <div id="l4chart" style="border: blue solid 2px;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
