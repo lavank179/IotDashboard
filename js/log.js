@@ -3,11 +3,6 @@ $("#profile").hide();
 $("#contact").hide();
 getSwitch(0);
 
-$("#bologna-list a").on("click", function (e) {
-  e.preventDefault();
-  $(this).tab("show");
-});
-
 // // chart example
 // google.charts.load("current", { packages: ["corechart"] });
 // google.charts.setOnLoadCallback(drawChart);
@@ -192,7 +187,7 @@ function printRow(v1, v2) {
   inp.className = "onoff";
   inp.type = "checkbox";
   inp.id = v2;
-  inp.checked = true;
+  inp.checked = false;
 
   const sp = document.createElement("span");
   sp.className = "round";
