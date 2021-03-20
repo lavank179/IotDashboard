@@ -76,6 +76,7 @@
     <script type="text/javascript" src="./js/chartsLight.js"></script>
     <script type="text/javascript" src="./js/chartsFan.js"></script>
     <script type="text/javascript" src="./js/chartsGauge.js"></script>
+    <script type="text/javascript" src="./js/chartsSensor.js"></script>
 </body>
 
 </html>

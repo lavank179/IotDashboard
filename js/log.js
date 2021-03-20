@@ -3,91 +3,6 @@ $("#profile").hide();
 $("#contact").hide();
 getSwitch(0);
 
-// // chart example
-// google.charts.load("current", { packages: ["corechart"] });
-// google.charts.setOnLoadCallback(drawChart);
-
-// function drawChart() {
-//   var data = google.visualization.arrayToDataTable([
-//     ["Year", "Sales", "Expenses"],
-//     ["2004", 1000, 400],
-//     ["2005", 1170, 460],
-//     ["2006", 660, 1120],
-//     ["2007", 1030, 540],
-//   ]);
-
-//   var options = {
-//     title: "Company Performance",
-//     curveType: "function",
-//     legend: { position: "bottom" },
-//     chartArea: {width: '100%', height: '100%'}
-//   };
-
-//   var chart = new google.visualization.LineChart(
-//     document.getElementById("chart1")
-//   );
-
-//   chart.draw(data, options);
-// }
-
-google.charts.load("current", { packages: ["gauge"] });
-google.charts.setOnLoadCallback(drawChart);
-
-function drawChart() {
-  var data1 = google.visualization.arrayToDataTable([
-    ["Label", "Value"],
-    ["Lights", 100],
-  ]);
-  var data2 = google.visualization.arrayToDataTable([
-    ["Label", "Value"],
-    ["Refrigerator", 80],
-  ]);
-  var data3 = google.visualization.arrayToDataTable([
-    ["Label", "Value"],
-    ["Fans", 80],
-  ]);
-  var data4 = google.visualization.arrayToDataTable([
-    ["Label", "Value"],
-    ["AC", 80],
-  ]);
-
-  var options = {
-    width: 400,
-    height: 200,
-    redFrom: 90,
-    redTo: 100,
-    yellowFrom: 75,
-    yellowTo: 90,
-    minorTicks: 5,
-  };
-
-  var chart1 = new google.visualization.Gauge(
-    document.getElementById("chart1")
-  );
-  var chart2 = new google.visualization.Gauge(
-    document.getElementById("chart2")
-  );
-  var chart3 = new google.visualization.Gauge(
-    document.getElementById("chart3")
-  );
-  var chart4 = new google.visualization.Gauge(
-    document.getElementById("chart4")
-  );
-
-  chart1.draw(data1, options);
-  chart2.draw(data2, options);
-  chart3.draw(data3, options);
-  chart4.draw(data4, options);
-
-  setInterval(function () {
-    data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-    chart1.draw(data1, options);
-    chart2.draw(data2, options);
-    chart3.draw(data3, options);
-    chart4.draw(data4, options);
-  }, 13000);
-}
-
 $(document).ready(function () {
   $("#sidebarCollapse").on("click", function () {
     $("#sidebar").toggleClass("active");
@@ -161,7 +76,11 @@ function getSwitch(ts) {
           printRow(data[i]["name"], data[i]["id"], data[i]["status"]);
         }
       } else if (ts === 1) {
-        printRow(data[count - 1]["name"], data[count - 1]["id"], data[count - 1]["status"]);
+        printRow(
+          data[count - 1]["name"],
+          data[count - 1]["id"],
+          data[count - 1]["status"]
+        );
       }
     },
   });
@@ -177,7 +96,7 @@ function printRow(v1, v2, v3) {
   th.innerHTML = '<a class="delete-item"><i class="fas fa-times"></i></a>';
 
   const td1 = document.createElement("td");
-  td1.innerHTML = "<h4>" + v1 + "</h4>";
+  td1.innerHTML = "<h5>" + v1 + "</h5>";
 
   const td2 = document.createElement("td");
   const label1 = document.createElement("label");
@@ -187,12 +106,11 @@ function printRow(v1, v2, v3) {
   inp.className = "onoff";
   inp.type = "checkbox";
   inp.id = v2;
-  if(v3 == "on") {
+  if (v3 == "on") {
     inp.checked = true;
-  } else if(v3 == "off"){
+  } else if (v3 == "off") {
     inp.checked = false;
   }
-  
 
   const sp = document.createElement("span");
   sp.className = "round";

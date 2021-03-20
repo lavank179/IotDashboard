@@ -13,7 +13,7 @@
 
 <div class="row">
     <div class="col-sm-5 col-md-5 col-lg-5">
-        <div class="text-center py-5" style="background: transparent;">
+        <div class="text-center" style="background: transparent;">
             <table class="table table-bordered">
 
 

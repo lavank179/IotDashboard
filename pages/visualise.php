@@ -253,40 +253,19 @@
             <div>
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs" id="bologna-list" role="tablist">
-                        <form>
-                            <input type="date" name="from_date">
-                            <p>From</p><input type="date" name="to_date">
-                            <button type="submit" class="btn btn-success">Submit</button>
-                        </form>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#g1" role="tab" aria-controls="description" aria-selected="true">Temperature Sensor</a>
+                            <a class="nav-link active" href="#t1" role="tab" aria-controls="description" aria-selected="true">Temperature Sensor </a>
                         </li>
 
                     </ul>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Piezoelectric Power Generation Data - Google Charts - live!</h4>
 
                     <div class="tab-content mt-3">
-                        <div class="tab-pane active" id="g1" role="tabpanel">
-                            <p class="card-text">Hourly data collected for one day.</p>
-                            <div id="line_chart1" style="width:100%; height: 394px;"></div>
+                        <div class="tab-pane active" id="t1" role="tabpanel">
+                            <h5>Hourly data collected for one day.</h5>
+                            <div id="t1chart" style="width:100%; height: 394px;"></div>
                             <a href="https://developers.google.com/chart/" class="card-link text-danger">Read more</a>
-                        </div>
-
-                        <div class="tab-pane" id="g2" role="tabpanel" aria-labelledby="history-tab">
-                            <p class="card-text">Daily data collected for one month.</p>
-                            <div id="line_chart2" style="width:100%; height: 394px;"></div>
-                        </div>
-
-                        <div class="tab-pane" id="g3" role="tabpanel" aria-labelledby="deals-tab">
-                            <p class="card-text">Monthly data collected for one year.</p>
-                            <div id="line_chart3" style="width:100%; height: 394px;"></div>
-                        </div>
-
-                        <div class="tab-pane" id="g4" role="tabpanel" aria-labelledby="deals-tab">
-                            <p class="card-text">Yearly data collected in all time.</p>
-                            <div id="line_chart4" style="width:100%; height: 394px;"></div>
                         </div>
                     </div>
                 </div>
