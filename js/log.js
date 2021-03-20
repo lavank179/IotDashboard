@@ -158,17 +158,17 @@ function getSwitch(ts) {
 
       if (ts === 0) {
         for (let i = 0; i < count; i++) {
-          printRow(data[i]["name"], data[i]["id"]);
+          printRow(data[i]["name"], data[i]["id"], data[i]["status"]);
         }
       } else if (ts === 1) {
-        printRow(data[count - 1]["name"], data[count - 1]["id"]);
+        printRow(data[count - 1]["name"], data[count - 1]["id"], data[count - 1]["status"]);
       }
     },
   });
 }
 
 // print row element
-function printRow(v1, v2) {
+function printRow(v1, v2, v3) {
   let coll = document.querySelector("#devicesCollection");
   const tr = document.createElement("tr");
 
@@ -187,7 +187,12 @@ function printRow(v1, v2) {
   inp.className = "onoff";
   inp.type = "checkbox";
   inp.id = v2;
-  inp.checked = false;
+  if(v3 == "on") {
+    inp.checked = true;
+  } else if(v3 == "off"){
+    inp.checked = false;
+  }
+  
 
   const sp = document.createElement("span");
   sp.className = "round";

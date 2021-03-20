@@ -63,6 +63,9 @@
 
 
     <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="//cdn.amcharts.com/lib/4/core.js"></script>
+<script src="//cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="//cdn.amcharts.com/lib/4/themes/animated.js"></script>
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
@@ -71,6 +74,8 @@
     <script src="./assets/MDBootstrap-pro/MDB-Pro_4.11.0/js/mdb.min.js"></script>
     <script type="text/javascript" src="./js/log.js"></script>
     <script type="text/javascript" src="./js/chartsLight.js"></script>
+    <script type="text/javascript" src="./js/chartsFan.js"></script>
+    <script type="text/javascript" src="./js/chartsGauge.js"></script>
 </body>
 
 </html>

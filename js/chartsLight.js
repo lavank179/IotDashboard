@@ -1,4 +1,4 @@
-$("#bologna-list a").on("click", function (e) {
+$("#bologna-listL a").on("click", function (e) {
   e.preventDefault();
   $(this).tab("show");
 });
