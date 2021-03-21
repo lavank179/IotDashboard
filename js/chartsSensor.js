@@ -1,52 +1,96 @@
+let alert33 = $(".filterSen1 .alert");
+let alert44 = $(".filterSen2 .alert");
+alert33.hide();
+alert44.hide();
+
+
 $(document).ready(function () {
-  am4core.useTheme(am4themes_animated);
+  setInterval(function () {
+    fromDate = document.querySelector(".filterSen1 #Fdate").value;
+    toDate = document.querySelector(".filterSen1 #Tdate").value;
+    f = document.querySelector(".filterSen1 #Fselect");
+    filterBy = f.options[f.selectedIndex].value;
 
-  var chart = am4core.create("t1chart", am4charts.XYChart);
-  chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+    if (fromDate != "" && toDate != "" && filterBy != "") {
+      alert33.hide();
+    } else {
+      alert33.show();
+    }
 
-  chart.paddingRight = 20;
+    fromDate = fromDate + " 00:00:00";
+    toDate = toDate + " 23:59:59";
 
-  var data = [];
-  var open = 100;
-  var close = 250;
-
-  for (var i = 1; i < 120; i++) {
-    open += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 4);
-    close = Math.round(
-      open +
-        Math.random() * 5 +
-        i / 5 -
-        (Math.random() < 0.5 ? 1 : -1) * Math.random() * 2
-    );
-    data.push({ date: new Date(2018, 0, i), open: open, close: close });
-  }
-
-  chart.data = data;
-
-  var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-
-  var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-  valueAxis.tooltip.disabled = true;
-
-  var series = chart.series.push(new am4charts.LineSeries());
-  series.dataFields.dateX = "date";
-  series.dataFields.openValueY = "open";
-  series.dataFields.valueY = "close";
-  series.tooltipText = "open: {openValueY.value} close: {valueY.value}";
-  series.sequencedInterpolation = true;
-  series.fillOpacity = 0.3;
-  series.defaultState.transitionDuration = 1000;
-  series.tensionX = 0.8;
-
-  var series2 = chart.series.push(new am4charts.LineSeries());
-  series2.dataFields.dateX = "date";
-  series2.dataFields.valueY = "open";
-  series2.sequencedInterpolation = true;
-  series2.defaultState.transitionDuration = 1500;
-  series2.stroke = chart.colors.getIndex(6);
-  series2.tensionX = 0.8;
-
-  chart.cursor = new am4charts.XYCursor();
-  chart.cursor.xAxis = dateAxis;
-  chart.scrollbarX = new am4core.Scrollbar();
+    $.ajax({
+      url: "./controllers/fetch/sensors/temp.php",
+      method: "POST",
+      data: {
+        fDate: fromDate,
+        tDate: toDate,
+        fils: filterBy,
+        Did: 16,
+      },
+      success: function (data) {
+        let h = JSON.parse(data);
+        temChart(h, "Temperature Sensor 1", "s1chart");
+      },
+    });
+  }, 500);
 });
+
+$(document).ready(function () {
+  setInterval(function () {
+    fromDate = document.querySelector(".filterSen2 #Fdate").value;
+    toDate = document.querySelector(".filterSen2 #Tdate").value;
+    f = document.querySelector(".filterSen2 #Fselect");
+    filterBy = f.options[f.selectedIndex].value;
+
+    if (fromDate != "" && toDate != "" && filterBy != "") {
+      alert44.hide();
+    } else {
+      alert44.show();
+    }
+
+    fromDate = fromDate + " 00:00:00";
+    toDate = toDate + " 23:59:59";
+
+    $.ajax({
+      url: "./controllers/fetch/sensors/temp.php",
+      method: "POST",
+      data: {
+        fDate: fromDate,
+        tDate: toDate,
+        fils: filterBy,
+        Did: 17,
+      },
+      success: function (data) {
+        let h = JSON.parse(data);
+        temChart(h, "Temperature Sensor 2", "s2chart");
+      },
+    });
+  }, 500);
+});
+
+function temChart(v1, v2, v3) {
+  google.charts.load("current", { packages: ["corechart", "bar"] });
+  google.charts.setOnLoadCallback(drawBasic);
+
+  function drawBasic() {
+    var data = new google.visualization.DataTable(v1);
+
+    var options = {
+      title: v2,
+      hAxis: {
+        title: "Time",
+      },
+      vAxis: {
+        title: "Temperature oC",
+      },
+    };
+
+    var chart = new google.visualization.ColumnChart(
+      document.getElementById(v3)
+    );
+
+    chart.draw(data, options);
+  }
+}
