@@ -39,20 +39,29 @@
         <p>This is some text to adjust the space.</p>
     </div>
 
-    <div class="col-sm-3 col-md-3 col-lg-3 text-center"></div>
+    <div class="col-sm-3 col-md-3 col-lg-3 text-center">
+        <div class="card">
+            <div id="chartA1" style="width: 100%; height: 394px;">
+
+            </div>
+            <h6>Units: 200 | Lights: 3</h6>
+        </div>
+        <br>
+
+    </div>
 
 
 
     <div class="col-sm-3 col-md-3 col-lg-3 text-center">
         <div class="card">
-            <div id="chartdiv1" style="width: 100%; height: 24vh;">
+            <div id="chartdiv1" style="width: 100%; height: 23vh;">
 
             </div>
             <h6>Units: 200 | Lights: 3</h6>
         </div>
         <br>
         <div class="card">
-            <div id="chartdiv2" style="width: 100%; height: 24vh;">
+            <div id="chartdiv2" style="width: 100%; height: 23vh;">
 
             </div>
             <h6>Units: 200 | Lights: 2</h6>
@@ -60,21 +69,29 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3 text-center">
 
-<div class="col-sm-3 col-md-3 col-lg-3 text-center">
+        <div id="chartdiv3" style="border: 2px black solid; width: 100%; height: 30vh;">
 
-    <div id="chartdiv3" style="border: 2px black solid; width: 100%; height: 30vh;">
+        </div>
+        <p>Units: 150 | Fans: 1</p>
 
+        <br>
+        <div id="chartdiv4" style="border: 2px black solid; width: 100%; height: 30vh;">
+
+        </div>
+        <p>Temp: 30&#8451; / 86&#8457;</p>
     </div>
-    <p>Units: 150 | Fans: 1</p>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="card">
+            <div id="chartA2" style="width: 100%; height: 24vh;">
 
-    <br>
-    <div id="chartdiv4" style="border: 2px black solid; width: 100%; height: 30vh;">
-
+            </div>
+            <h6>Units: 200 | Lights: 2</h6>
+        </div>
     </div>
-    <p>Temp: 30&#8451; / 86&#8457;</p>
 </div>
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

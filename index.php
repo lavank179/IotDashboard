@@ -67,6 +67,8 @@
     <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 
@@ -80,6 +82,7 @@
     <script type="text/javascript" src="./js/chartsFan.js"></script>
     <script type="text/javascript" src="./js/chartsGauge.js"></script>
     <script type="text/javascript" src="./js/chartsSensor.js"></script>
+    <script type="text/javascript" src="./js/chartsArea.js"></script>
 </body>
 
 </html>
