@@ -35,7 +35,7 @@ $(document).ready(function () {
   setInterval(function () {
     let m = [];
     let k = 0;
-    document.querySelectorAll("#devicesCollection .onoff").forEach((item) => {
+    document.querySelectorAll("#devicesCollectionLight .onoff").forEach((item) => {
       if (
         item.id == "111" ||
         item.id == "112" ||
@@ -101,7 +101,7 @@ $(document).ready(function () {
   setInterval(function () {
     let m = [];
     let k = 0;
-    document.querySelectorAll("#devicesCollection .onoff").forEach((item) => {
+    document.querySelectorAll("#devicesCollectionFan .onoff").forEach((item) => {
       if (item.id == "115" || item.id == "116") {
         if (item.checked == true) {
           m[k] = 80;

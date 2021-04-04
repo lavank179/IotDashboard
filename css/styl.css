@@ -32,7 +32,7 @@ span:before {
   transition: .4s;
 }
 input:checked + span {
-  background-color: rgb(85, 21, 138);
+  background-color: #6795FF;
 }
 input:focus + span {
   box-shadow: 0 0 1px rgb(255, 77, 211);

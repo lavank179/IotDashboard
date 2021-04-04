@@ -17,7 +17,8 @@ if(isset($_POST['stat'])){
 elseif(isset($_POST['dName'])) {
     $data[$l]['id'] = intval($_POST['dId']);
     $data[$l]['name'] = $_POST['dName'];
-    $data[$l]['status'] = "off";  
+    $data[$l]['status'] = "off";
+    $data[$l]['category'] = $_POST['dCate'];
 }
 
 elseif(isset($_POST['dRem'])){

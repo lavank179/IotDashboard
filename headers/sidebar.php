@@ -1,27 +1,18 @@
 <div class="sidebar-header">
-    <h3> IoT Dashboard </h3>
+    <h5>IoT Dashboard</h5>
 </div>
-
+<br>
 <ul class="list-unstyled components men">
     <li class="nav-item active">
-        <a class="home"> Home </a>
+        <a class="home"><i class="fad fa-home-lg-alt"></i> Home </a>
     </li>
     <li class="nav-item">
-        <a class="visualise"> Visualise </a>
+        <a class="visualise"><i class="fal fa-analytics"></i> Visualise </a>
     </li>
     <li class="nav-item">
-        <a class="profile"> Profile </a>
+        <a class="profile"><i class="fal fa-address-card"></i> Profile </a>
     </li>
     <li class="nav-item">
-        <a class="contact"> Contact </a>
-    </li>
-</ul>
-
-<ul class="list-unstyled CTAs">
-    <li>
-        <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
-    </li>
-    <li>
-        <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+        <a class="contact"><i class="fal fa-comments-alt"></i> Contact </a>
     </li>
 </ul>
