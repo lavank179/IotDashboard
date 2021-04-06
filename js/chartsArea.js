@@ -4,6 +4,7 @@ function lightFan() {
   $.ajax({
     url: "./controllers/fetch/lights/lightfan.php",
     method: "POST",
+    async: false,
     data: {
       lightfan: "apiloaded",
     },
@@ -11,7 +12,6 @@ function lightFan() {
       lights = JSON.parse(data);
     },
   });
-  console.log(lights[0], lights[1], lights[2]);
 
   var options = {
     series: [

@@ -35,21 +35,23 @@ $(document).ready(function () {
   setInterval(function () {
     let m = [];
     let k = 0;
-    document.querySelectorAll("#devicesCollectionLight .onoff").forEach((item) => {
-      if (
-        item.id == "111" ||
-        item.id == "112" ||
-        item.id == "113" ||
-        item.id == "114"
-      ) {
-        if (item.checked == true) {
-          m[k] = 60;
-        } else {
-          m[k] = 0;
+    document
+      .querySelectorAll("#devicesCollectionLight .onoff")
+      .forEach((item) => {
+        if (
+          item.id == "111" ||
+          item.id == "112" ||
+          item.id == "113" ||
+          item.id == "114"
+        ) {
+          if (item.checked == true) {
+            m[k] = 60;
+          } else {
+            m[k] = 0;
+          }
+          k += 1;
         }
-        k += 1;
-      }
-    });
+      });
 
     let n = 0;
     for (var x = 0; x < m.length; x++) {
@@ -57,10 +59,18 @@ $(document).ready(function () {
     }
 
     hand.showValue(n, 1000, am4core.ease.cubicOut);
+
+    // print units value near gauge
+    let s = 0;
+    if (n == 60) s = 1;
+    else if (n == 120) s = 2;
+    else if (n == 180) s = 3;
+    else if (n == 240) s = 4;
+    $("#home #gc1").text(` Units : ${n} | Lights : ${s} `);
   }, 2000);
   // Add bottom label
   var label = chart.chartContainer.createChild(am4core.Label);
-  label.text = "Power (w)";
+  label.text = "Lights (w)";
   label.align = "center";
 });
 
@@ -101,16 +111,18 @@ $(document).ready(function () {
   setInterval(function () {
     let m = [];
     let k = 0;
-    document.querySelectorAll("#devicesCollectionFan .onoff").forEach((item) => {
-      if (item.id == "115" || item.id == "116") {
-        if (item.checked == true) {
-          m[k] = 80;
-        } else {
-          m[k] = 0;
+    document
+      .querySelectorAll("#devicesCollectionFan .onoff")
+      .forEach((item) => {
+        if (item.id == "115" || item.id == "116") {
+          if (item.checked == true) {
+            m[k] = 80;
+          } else {
+            m[k] = 0;
+          }
+          k += 1;
         }
-        k += 1;
-      }
-    });
+      });
 
     let n = 0;
     for (var x = 0; x < m.length; x++) {
@@ -118,10 +130,16 @@ $(document).ready(function () {
     }
 
     hand.showValue(n, 1000, am4core.ease.cubicOut);
+
+    // print units value near gauge
+    let s = 0;
+    if (n == 80) s = 1;
+    else if (n == 160) s = 2;
+    $("#home #gc2").text(` Units : ${n} | Fans : ${s} `);
   }, 2000);
   // Add bottom label
   var label = chart.chartContainer.createChild(am4core.Label);
-  label.text = "Power (w)";
+  label.text = "Fans (w)";
   label.align = "center";
 });
 
