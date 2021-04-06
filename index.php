@@ -31,6 +31,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                         <li class="nav-item">
+                            <a class="nav-link btn-rounded1" onclick="RefreshAll();"> <i class="fas fa-sync-alt"></i> </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link btn-rounded1"> <i class="far fa-bell"></i> </a>
                         </li>
                         <li class="nav-item">

@@ -17,7 +17,7 @@
     <div class="tab-content">
 
         <div class="tab-pane" id="g1" role="tabpanel" aria-labelledby="history-tab">
-            <h5> Light 1 Data of the given time period. Filteration based on the daily, monthly and yearly wise. </h5>
+            <!-- <h5> Light 1 Data of the given time period. Filteration based on the daily, monthly and yearly wise. </h5> -->
             <div class="filterLight1" role="alert">
                 <span class="alert alert-danger"> &nbsp;&nbsp;No data Found. please give the necessary Input. </span>
             </div>
@@ -32,7 +32,11 @@
                         <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
                     </div>
                 </div>
-                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <button id="sidebarCollapse" class="btn btn-secondary" onclick="getCSVdata('filterLight1', 16)">
+                        <i class="fad fa-download"></i>
+                    </button>
+                </div>
                 <div class="col-sm-4">
 
                     <select class="custom-select md-form" required id="Fselect">
@@ -64,7 +68,11 @@
                         <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
                     </div>
                 </div>
-                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <button id="sidebarCollapse" class="btn btn-secondary" onclick="getCSVdata('filterLight2', 17)">
+                        <i class="fad fa-download"></i>
+                    </button>
+                </div>
                 <div class="col-sm-4">
 
                     <select class="custom-select md-form" required id="Fselect">
@@ -96,7 +104,11 @@
                         <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
                     </div>
                 </div>
-                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <button id="sidebarCollapse" class="btn btn-secondary" onclick="getCSVdata('filterLight3', 18)">
+                        <i class="fad fa-download"></i>
+                    </button>
+                </div>
                 <div class="col-sm-4">
 
                     <select class="custom-select md-form" required id="Fselect">
@@ -127,7 +139,11 @@
                         <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
                     </div>
                 </div>
-                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <button id="sidebarCollapse" class="btn btn-secondary" onclick="getCSVdata('filterLight4', 19)">
+                        <i class="fad fa-download"></i>
+                    </button>
+                </div>
                 <div class="col-sm-4">
 
                     <select class="custom-select md-form" required id="Fselect">

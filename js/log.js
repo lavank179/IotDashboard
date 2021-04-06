@@ -3,6 +3,11 @@ $("#profile").hide();
 $("#contact").hide();
 getSwitch(0);
 
+function RefreshAll() {
+  lightFan();
+  // TempLevel();
+}
+
 $("#home #lig .btn-md, #home #fans .btn").fadeOut();
 
 $(document).ready(function () {
@@ -55,7 +60,7 @@ function updateB2(val1, val2, val3) {
     data: {
       dName: val1,
       dId: val2,
-      dCate: val3
+      dCate: val3,
     },
     success: function (data) {
       d1 = data;
@@ -77,14 +82,19 @@ function getSwitch(ts) {
 
       if (ts === 0) {
         for (let i = 0; i < count; i++) {
-          printRow(data[i]["name"], data[i]["id"], data[i]["status"], data[i]['category']);
+          printRow(
+            data[i]["name"],
+            data[i]["id"],
+            data[i]["status"],
+            data[i]["category"]
+          );
         }
       } else if (ts === 1) {
         printRow(
           data[count - 1]["name"],
           data[count - 1]["id"],
           data[count - 1]["status"],
-          data[count - 1]['category']
+          data[count - 1]["category"]
         );
       }
     },
@@ -94,12 +104,12 @@ function getSwitch(ts) {
 // print row element
 function printRow(v1, v2, v3, v4) {
   let coll;
-  if(v4 == 'light') {
+  if (v4 == "light") {
     coll = document.querySelector("#devicesCollectionLight");
-  } else if(v4 == 'fan'){
+  } else if (v4 == "fan") {
     coll = document.querySelector("#devicesCollectionFan");
   }
-  
+
   const tr = document.createElement("tr");
 
   const th = document.createElement("th");
@@ -227,7 +237,6 @@ $(".datepicker").pickadate({
 $(document).ready(function () {
   $(".mdb-select").materialSelect();
 });
-
 
 // Add button hide&seek
 document.querySelectorAll("#home #lig, #home #fans").forEach((item) => {
