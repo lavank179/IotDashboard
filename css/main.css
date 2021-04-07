@@ -1,7 +1,7 @@
 /*
     DEMO STYLE
 */
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Lemonada";
 
 body {
   font-family: "Poppins", sans-serif;
@@ -126,7 +126,7 @@ span {
 #sidebar ul.components {
   padding: 20px 0;
 }
-#sidebar ul li{
+#sidebar ul li {
   border-bottom: #b9c8df solid 0.3px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -139,7 +139,7 @@ span {
   display: block;
 }
 #sidebar ul li a:hover {
-  color: #6795FF;
+  color: #6795ff;
   background: #fff;
 }
 #sidebar ul li a i {
@@ -148,7 +148,7 @@ span {
 
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
-  color: #6795FF;
+  color: #6795ff;
   background: white;
 }
 
@@ -204,7 +204,7 @@ a.article:hover {
 #content {
   min-height: 100vh;
   transition: all 0.3s;
-  background-color: #EDF1F7;
+  background-color: #edf1f7;
 }
 
 /* ---------------------------------------------------

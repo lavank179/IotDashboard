@@ -14,3 +14,4 @@
 
 <link rel="stylesheet" href="./css/styl.css">
 <link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/charts.css">

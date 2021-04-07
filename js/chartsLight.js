@@ -3,9 +3,39 @@ $("#bologna-listL a").on("click", function (e) {
   $(this).tab("show");
 });
 
-$(
-  ".filterLight1 .alert, .filterLight2 .alert, .filterLight3 .alert, .filterLight4 .alert"
-).hide();
+// /* JavaScript Media Queries */
+// if (matchMedia) {
+//   const mq1 = window.matchMedia("(min-width: 576px)");
+//   const mq2 = window.matchMedia("(min-width: 576px) and (max-width: 990px)");
+//   const mq3 = window.matchMedia("(min-width: 990px)");
+//   mq.addListener(WidthChange);
+//   WidthChange(mq);
+// }
+
+// // media query change
+// function WidthChange(mq) {
+
+//   const msg = (mq.matches ? "more" : "less") + " than 500 pixels";
+//   console.log(msg);
+
+// }
+
+$(window).on('resize', function (){
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+
+  if(width < 576){
+
+  }
+  else if(width >= 576 && width < 990) {
+  }
+  else if( width >= 990){
+
+  }
+});
+
+
+
 
 function getInputValues(ids) {
   fromDate = document.querySelector("." + ids + " #Fdate").value;
@@ -51,8 +81,6 @@ function printChart(h, title, id) {
 
     var options = {
       title: title,
-      width: 1135,
-      height: 550,
       legend: { position: "right" },
       hAxis: {
         title: "Time (hr)",

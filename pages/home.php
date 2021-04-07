@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3">
+    <div class="col-lg-3">
         <div class="card text-center" id="lig" style="height: 420px;">
             <div class="card-header" style="background: white;">
                 <h3 style="color: #3266FF;"> Lights&nbsp; </h3>
@@ -15,9 +15,10 @@
                 </button>
             </div>
         </div>
+        <br>
     </div>
 
-    <div class="col-sm-3 col-md-3 col-lg-3">
+    <div class="col-lg-3">
         <div class="card text-center" id="fans" style="height: 420px;">
             <div class="card-header" style="background: white;">
                 <h3 style="color: #3266FF;"> Fans&nbsp; </h3>
@@ -34,9 +35,10 @@
 
             </div>
         </div>
+        <br>
     </div>
 
-    <div class="col-sm-3 col-md-3 col-lg-3 text-center">
+    <div class="col-lg-3 text-center">
         <div class="card">
             <div id="chartA1" style="width: 100%; height: 420px;">
 
@@ -48,7 +50,7 @@
 
 
 
-    <div class="col-sm-3 col-md-3 col-lg-3 text-center">
+    <div class="col-lg-3 text-center">
         <div class="card">
             <div id="chartdiv1" style="width: 100%; height: 23vh;">
 
@@ -64,9 +66,9 @@
         </div>
     </div>
 </div>
-
+<br>
 <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3 text-center">
+    <div class="col-lg-3 text-center">
         <div class="card">
             <div id="chartdiv2" style="width: 100%; height: 24vh;">
             </div>
@@ -79,14 +81,16 @@
             </div>
             <p>Temp: 30&#8451; / 86&#8457;</p>
         </div>
+        <br>
     </div>
-    <div class="col-sm-4 col-md-4 col-lg-4">
+    <div class="col-lg-4">
         <div class="card">
             <div id="chartA2" style="width: 100%; height: 60.8vh;">
             </div>
         </div>
+        <br>
     </div>
-    <div class="col-sm-5 col-md-5 col-lg-5">
+    <div class="col-lg-5">
         <div class="card">
             <table class="table table-hover">
                 <thead>
@@ -141,6 +145,7 @@
                 </tbody>
             </table>
         </div>
+        <br>
     </div>
 </div>
 <br><br><br>

@@ -19,25 +19,25 @@
         <!-- Page Content Holder -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light" id="topNAV">
+            <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="topNAV">
 
-                <button id="sidebarCollapse">
+                <button id="sidebarCollapse" class="btn btn-sm btn-outline-primary shadow-none">
                     <i class="fas fa-align-left"></i>
                 </button>
-                <button class="d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="d-inline-block d-lg-none ml-auto btn btn-sm btn-outline-primary shadow-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-align-right"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link btn-rounded1" onclick="RefreshAll();"> <i class="fas fa-sync-alt"></i> </a>
+                            <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none" onclick="RefreshAll();"> <i class="fas fa-sync-alt"></i> </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-rounded1"> <i class="far fa-bell"></i> </a>
+                            <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none"> <i class="far fa-bell"></i> </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-rounded1"> <i class="fas fa-user-circle"></i> </a>
+                            <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none"> <i class="fas fa-user-circle"></i> </a>
                         </li>
                     </ul>
                 </div>

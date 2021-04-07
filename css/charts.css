@@ -1,0 +1,51 @@
+#visualise a h6 {
+  font-family: "Lemonada";
+}
+
+#visualise #l1chart,
+#l2chart,
+#l3chart,
+#l4chart,
+#f1chart,
+#f2chart,
+#s1chart,
+#s2chart {
+  width: 100%;
+}
+
+@media (min-width: 990px) {
+  #visualise #l1chart,
+  #l2chart,
+  #l3chart,
+  #l4chart,
+  #f1chart,
+  #f2chart,
+  #s1chart,
+  #s2chart {
+    height: 550px;
+  }
+}
+@media (min-width: 576px) and (max-width: 990px) {
+    #visualise #l1chart,
+#l2chart,
+#l3chart,
+#l4chart,
+#f1chart,
+#f2chart,
+#s1chart,
+#s2chart {
+  height: 350px;
+}
+}
+@media (max-width: 576px) {
+    #visualise #l1chart,
+#l2chart,
+#l3chart,
+#l4chart,
+#f1chart,
+#f2chart,
+#s1chart,
+#s2chart {
+  height: 250px;
+}
+}
