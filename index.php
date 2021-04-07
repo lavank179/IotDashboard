@@ -51,6 +51,10 @@
 
             </div>
 
+            <footer>
+                <div><?php include('./headers/footer.php'); ?></div>
+            </footer>
+
         </div>
 
 

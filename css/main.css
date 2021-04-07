@@ -272,3 +272,13 @@ a.article:hover {
   border-radius: 10px;
   background-color: white;
 }
+
+#go-top img {
+  width: 45px;
+  height: 45px;
+}
+
+footer .ico a{
+  padding-right: 12px;
+  padding-left: 12px;
+}
