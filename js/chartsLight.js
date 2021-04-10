@@ -3,40 +3,7 @@ $("#bologna-listL a").on("click", function (e) {
   $(this).tab("show");
 });
 
-// /* JavaScript Media Queries */
-// if (matchMedia) {
-//   const mq1 = window.matchMedia("(min-width: 576px)");
-//   const mq2 = window.matchMedia("(min-width: 576px) and (max-width: 990px)");
-//   const mq3 = window.matchMedia("(min-width: 990px)");
-//   mq.addListener(WidthChange);
-//   WidthChange(mq);
-// }
-
-// // media query change
-// function WidthChange(mq) {
-
-//   const msg = (mq.matches ? "more" : "less") + " than 500 pixels";
-//   console.log(msg);
-
-// }
-
-$(window).on('resize', function (){
-  let width = window.innerWidth;
-  let height = window.innerHeight;
-
-  if(width < 576){
-
-  }
-  else if(width >= 576 && width < 990) {
-  }
-  else if( width >= 990){
-
-  }
-});
-
-
-
-
+// Retrieve input values from respective input fields in visualize
 function getInputValues(ids) {
   fromDate = document.querySelector("." + ids + " #Fdate").value;
   toDate = document.querySelector("." + ids + " #Tdate").value;
@@ -46,6 +13,7 @@ function getInputValues(ids) {
   return [fromDate, toDate, filterBy];
 }
 
+// Show & hide the no data alert according to the output values
 function changeAlert(ids, f, t, fil) {
   let alerts = $("." + ids + " .alert");
   if (f != "" && t != "" && fil != "") {
@@ -55,6 +23,7 @@ function changeAlert(ids, f, t, fil) {
   }
 }
 
+// Ajax function to get the data from DB using PHP
 function getDataAll(v1, v2, v3, v4, v5, v6, v7) {
   $.ajax({
     url: "./controllers/fetch/" + v7 + ".php",
@@ -67,11 +36,17 @@ function getDataAll(v1, v2, v3, v4, v5, v6, v7) {
     },
     success: function (data) {
       var h = JSON.parse(data);
-      printChart(h, v5, v6);
+      if (v4 == 60) {
+        if(h.length > 0) printChartPie(h, v5, v6);
+        console.log(JSON.stringify(h));
+      } else {
+        printChart(h, v5, v6);
+      }
     },
   });
 }
 
+// Display the charts according to the data in the respective places
 function printChart(h, title, id) {
   google.charts.load("current", { packages: ["corechart", "line"] });
   google.charts.setOnLoadCallback(drawBasic1);
@@ -98,46 +73,90 @@ function printChart(h, title, id) {
   }
 }
 
+// Display the charts according to the data in the respective places
+function printChartPie(h, title, id) {
+  google.charts.load("current", { packages: ["corechart"] });
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = new google.visualization.arrayToDataTable(h);
+
+    var options = {
+      title: title,
+      is3D: true,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById(id));
+    chart.draw(data, options);
+  }
+}
+
+// Light 1 func to get all data and print values
 $(document).ready(function () {
   setInterval(function () {
     let [v1, v2, v3] = getInputValues("filterLight1");
 
     changeAlert("filterLight1", v1, v2, v3);
 
-    getDataAll(v1, v2, v3, 16, "Light 1", "l1chart", "lights/light1");
+    getDataAll(v1, v2, v3, 16, "Light 1", "l1chart", "lights");
   }, 500);
 });
 
+// Light 2 func to get all data and print values
 $(document).ready(function () {
   setInterval(function () {
     let [v1, v2, v3] = getInputValues("filterLight2");
 
     changeAlert("filterLight2", v1, v2, v3);
 
-    getDataAll(v1, v2, v3, 17, "Light 2", "l2chart", "lights/light2");
+    getDataAll(v1, v2, v3, 17, "Light 2", "l2chart", "lights");
   }, 500);
 });
 
+// Light 3 func to get all data and print values
 $(document).ready(function () {
   setInterval(function () {
     let [v1, v2, v3] = getInputValues("filterLight3");
 
     changeAlert("filterLight3", v1, v2, v3);
 
-    getDataAll(v1, v2, v3, 18, "Light 3", "l3chart", "lights/light3");
+    getDataAll(v1, v2, v3, 18, "Light 3", "l3chart", "lights");
   }, 500);
 });
 
+// Light 4 func to get all data and print values
 $(document).ready(function () {
   setInterval(function () {
     let [v1, v2, v3] = getInputValues("filterLight4");
 
     changeAlert("filterLight4", v1, v2, v3);
 
-    getDataAll(v1, v2, v3, 19, "Light 4", "l4chart", "lights/light4");
+    getDataAll(v1, v2, v3, 19, "Light 4", "l4chart", "lights");
   }, 500);
 });
 
+// All Light func to get all data and print values
+$(document).ready(function () {
+  setInterval(function () {
+    let [v1, v2, v3] = getInputValues("filterLightAll");
+
+    changeAlert("filterLightAll", v1, v2, v3);
+
+    getDataAll(v1, v2, v3, 50, "All Lights Total", "l5chart", "lights");
+  }, 500);
+});
+
+// All Light func to get all data and print values eith Zones in pie chart
+$(document).ready(function () {
+  setInterval(function () {
+    let [v1, v2, v3] = getInputValues("filterLightZones");
+
+    changeAlert("filterLightAll", v1, v2, v3);
+
+    getDataAll(v1, v2, v3, 60, "All Lights Zones", "l6chart", "lights");
+  }, 500);
+});
+
+// Snippet to convert the data to CSV format and Download
 function getCSVdata(id, n) {
   let [v1, v2, v3] = getInputValues(id);
 
@@ -189,6 +208,7 @@ function getCSVdata(id, n) {
 // }
 //
 
+// Snippet to download the CSV file with custom filename and .csv file-format
 function download(strData, strFileName, strMimeType) {
   var D = document,
     a = D.createElement("a");

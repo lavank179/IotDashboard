@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     changeAlert("filterFan1", v1, v2, v3);
 
-    getDataAll(v1, v2, v3, 16, "Fan 1", "f1chart", "lights/light1");
+    getDataAll(v1, v2, v3, 16, "Fan 1", "f1chart", "lights");
   }, 500);
 });
 
@@ -19,6 +19,6 @@ $(document).ready(function () {
 
     changeAlert("filterFan2", v1, v2, v3);
 
-    getDataAll(v1, v2, v3, 17, "Fan 2", "f2chart", "lights/light2");
+    getDataAll(v1, v2, v3, 17, "Fan 2", "f2chart", "lights");
   }, 500);
 });

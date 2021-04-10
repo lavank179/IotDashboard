@@ -23,6 +23,16 @@
                     <h6>Light 4</h6>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#g5" role="tab" aria-controls="deals" aria-selected="false">
+                    <h6>All Lights</h6>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#g6" role="tab" aria-controls="deals" aria-selected="false">
+                    <h6>Light Zones</h6>
+                </a>
+            </li>
         </ul>
 
         <div class="tab-content">
@@ -175,6 +185,82 @@
                 </div>
                 <div>
                     <div id="l4chart"></div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="g5" role="tabpanel" aria-labelledby="deals-tab">
+                <div class="filterLightAll" role="alert">
+                    <span class="alert alert-danger"> &nbsp;&nbsp;No data Found. please give the necessary Input. </span>
+                </div>
+                <div class="row filterLightAll">
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <input placeholder="From Date" type="date" id="Fdate" class="form-control datepicker">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterLightAll', 50)">
+                                <i class="fad fa-download"></i> Download as CSV
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+
+                        <select class="custom-select md-form" required id="Fselect">
+                            <option value="date"> Daily </option>
+                            <option value="month"> Monthly </option>
+                            <option value="year"> Yearly </option>
+                        </select>
+
+                    </div>
+                </div>
+                <div>
+                    <div id="l5chart"></div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="g6" role="tabpanel" aria-labelledby="deals-tab">
+                <div class="filterLightZones" role="alert">
+                    <span class="alert alert-danger"> &nbsp;&nbsp;No data Found. please give the necessary Input. </span>
+                </div>
+                <div class="row filterLightZones">
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <input placeholder="From Date" type="date" id="Fdate" class="form-control datepicker">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterLightZones', 60)">
+                                <i class="fad fa-download"></i> Download as CSV
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+
+                        <select class="custom-select md-form" required id="Fselect">
+                            <option value="date"> Daily </option>
+                            <option value="month"> Monthly </option>
+                            <option value="year"> Yearly </option>
+                        </select>
+
+                    </div>
+                </div>
+                <div>
+                    <div id="l6chart"></div>
                 </div>
             </div>
         </div>

@@ -22,7 +22,7 @@ function lightFan() {
   var chart = new ApexCharts(document.querySelector("#chartA1"), options);
   chart.render();
   $.ajax({
-    url: "./controllers/fetch/lights/lightfan.php",
+    url: "./controllers/fetch/lightfan.php",
     method: "POST",
     async: false,
     data: { lightfan: "apiloaded" },
