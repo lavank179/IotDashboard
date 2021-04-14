@@ -282,3 +282,11 @@ footer .ico a{
   padding-right: 12px;
   padding-left: 12px;
 }
+
+footer {
+  background-color: black;
+}
+
+footer .ico a i {
+  color: white;
+}

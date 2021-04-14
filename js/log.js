@@ -251,3 +251,15 @@ document.querySelectorAll("#home #lig, #home #fans").forEach((item) => {
     $("#home #" + item.id + " .btn-md").fadeOut(500);
   });
 });
+
+//smooth scroll onclick nav-link
+$('footer a[href*="#"]').on('click', function(e) {
+  e.preventDefault()
+
+  $('html, body').animate({
+          scrollTop: $($(this).attr('href')).offset().top,
+      },
+      500,
+      'linear'
+  )
+});
