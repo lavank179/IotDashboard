@@ -1,9 +1,16 @@
 <?php
 ob_start();
 // Set sessions
-if (!isset($_SESSION)) {
+if(!isset($_SESSION)) {
+    session_set_cookie_params(0);
     session_start();
 }
+if (isset($_SESSION['email'])) {
+    echo "<script>
+         alert('A valid session is still running. Please Logout to proceed to Login Page.');
+         window.location.href='dashboard.php';
+         </script>";
+} else {
 
 include('./controllers/db.php');
 ?>
@@ -182,4 +189,4 @@ include('./controllers/db.php');
 </body>
 
 </html>
-<?php ?>
+<?php } ?>

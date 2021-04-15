@@ -38,7 +38,6 @@ function getDataAll(v1, v2, v3, v4, v5, v6, v7) {
       var h = JSON.parse(data);
       if (v4 == 60) {
         if(h.length > 0) printChartPie(h, v5, v6);
-        console.log(JSON.stringify(h));
       } else {
         printChart(h, v5, v6);
       }

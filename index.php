@@ -1,4 +1,19 @@
-<?php ?>
+<?php
+require_once './controllers/auth/config.php';
+
+// Is the user already logged in? Redirect him/her to the private page
+
+if ($_SESSION['email']) {
+    header("Location: dashboard.php");
+    exit;
+}
+
+if (isset($_POST['Submit'])) {
+    $do_login = true;
+
+    include_once './controllers/auth/do_login.php';
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +33,6 @@
 </head>
 
 <body>
-<?php include('./controllers/auth/signup.php'); ?>
     <div class="container-fluid bg-login">
         <div class="container">
             <div class="row">
@@ -35,10 +49,15 @@
                                     <div class="logo-cover text-center pt-5 pb-5">
                                         <!-- <img src="./assets/login-images/logo.png" alt=""> -->
                                         <h2> Marvel IoT </h2>
-                                        <?php echo $signupSuccess; ?>
+                                        <?php echo $accountNotExistErr; ?>
+                                        <?php
+                                        if ($login_error) {
+                                            echo '<div id="error_notification">The submitted login info is incorrect.</div>';
+                                        }
+                                        ?>
                                     </div>
                                     <br><br><br>
-                                    <form>
+                                    <form method="POST">
                                         <div class="form-outline mb-4">
                                             <input type="email" id="email" class="form-control" name="Email" placeholder="Email" />
                                             <div id="er1"></div>
@@ -52,7 +71,7 @@
                                         <div class="row mb-4">
                                             <div class="col d-flex justify-content-center">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="1" id="rememberme" />
+                                                    <input class="form-check-input" type="checkbox" name="auto_login" value="1" id="rememberme" />
                                                     <label class="form-check-label" for="rememberme"> Remember me </label>
                                                 </div>
                                             </div>
