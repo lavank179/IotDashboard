@@ -1,4 +1,11 @@
 <?php
+    ob_start();
+    // Set sessions
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+
+
     $hostname = "localhost";
     $username = "root";
     $password = "";

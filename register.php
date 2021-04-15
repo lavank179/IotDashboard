@@ -1,4 +1,13 @@
-<?php ?>
+<?php
+ob_start();
+// Set sessions
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+include('./controllers/db.php');
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +27,7 @@
 </head>
 
 <body>
+    <?php include('./controllers/auth/signup.php'); ?>
     <div class="container-fluid bg-login">
         <div class="container">
             <div class="row">
@@ -34,9 +44,11 @@
                                     <div class="logo-cover text-center pt-5 pb-5">
                                         <!-- <img src="./assets/login-images/logo.png" alt=""> -->
                                         <h2> Marvel IoT </h2>
+                                        <?php echo $signupErr; ?>
+                                        <?php echo $email_exist; ?>
                                     </div>
                                     <br>
-                                    <form>
+                                    <form method="POST">
                                         <div class="form-outline mb-4">
                                             <input type="text" id="username" class="form-control" name="Username" placeholder="UserName" />
                                             <div id="er3"></div>
@@ -62,22 +74,9 @@
                                             <div id="er5"></div>
                                         </div>
 
-                                        <div class="row mb-4">
-                                            <div class="col d-flex justify-content-center">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="rememberme" checked />
-                                                    <label class="form-check-label" for="form1Example3"> Remember me </label>
-                                                </div>
-                                            </div>
-
-                                            <div class="col">
-                                                <a href="#!">Forgot password?</a>
-                                            </div>
-                                        </div>
-
                                         <button type="submit" id="LoginSub" class="btn btn-primary btn-block" name="Submit">Sign Up</button>
                                         <br>
-                                        <a href="./index.php"> Already have an account? Login In here </a>
+                                        <div class="text-center"><a href="./index.php"> Already have an account? Login In here </a></div>
                                     </form>
                                 </div>
                             </div>
@@ -158,6 +157,7 @@
                 v4 = false;
             } else {
                 $("#er4").removeClass('alert-danger');
+                $("#er4").empty();
                 $("#cpassword").addClass('addGreen');
                 $("#cpassword").removeClass('addRed');
                 v4 = true;
