@@ -6,5 +6,5 @@
     session_destroy();
     setcookie($cookie_name, '', 1);
     setcookie($cookie_name, '', 1, '/');
-    header("Location: ../../index.php")
+    header("Location: ../../")
 ;?>

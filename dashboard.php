@@ -45,7 +45,7 @@ if (!isset($_SESSION)) {
                                 <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none"> <i class="fas fa-user-circle"></i> </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./controllers/auth/logout.php" class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none"> <i class="far fa-sign-out-alt"></i> </a>
+                                <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none" onclick="Logout();"> <i class="far fa-sign-out-alt"></i> </a>
                             </li>
                         </ul>
                     </div>
@@ -102,7 +102,7 @@ if (!isset($_SESSION)) {
     <?php } else {
         echo "<script>
          alert('A valid session was not exist. Please Login to Access.');
-         window.location.href='index.php';
+         window.location.href='./';
          </script>";
     } ?>
 </body>

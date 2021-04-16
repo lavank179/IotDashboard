@@ -253,13 +253,19 @@ document.querySelectorAll("#home #lig, #home #fans").forEach((item) => {
 });
 
 //smooth scroll onclick nav-link
-$('footer a[href*="#"]').on('click', function(e) {
-  e.preventDefault()
+$('footer a[href*="#"]').on("click", function (e) {
+  e.preventDefault();
 
-  $('html, body').animate({
-          scrollTop: $($(this).attr('href')).offset().top,
-      },
-      500,
-      'linear'
-  )
+  $("html, body").animate(
+    {
+      scrollTop: $($(this).attr("href")).offset().top,
+    },
+    500,
+    "linear"
+  );
 });
+
+//sign out the current user
+function Logout() {
+  window.location.href = "./controllers/auth/logout.php";
+}

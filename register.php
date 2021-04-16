@@ -83,7 +83,7 @@ include('./controllers/db.php');
 
                                         <button type="submit" id="LoginSub" class="btn btn-primary btn-block" name="Submit">Sign Up</button>
                                         <br>
-                                        <div class="text-center"><a href="./index.php"> Already have an account? Login In here </a></div>
+                                        <div class="text-center"><a href="./"> Already have an account? Login In here </a></div>
                                     </form>
                                 </div>
                             </div>
