@@ -7,17 +7,22 @@ if (isset($_POST['fils'])) {
     $filter = $_POST['fils'];
     $Did = intval($_POST['Did']);
 
-    switch ($filter) {
-        case "date":
-            $query = "SELECT SUM(total) AS powers, endTime AS etime FROM lights WHERE Did='{$Did}' AND (endtime BETWEEN '{$from}' AND '{$to}') GROUP BY date(endTime)";
-            break;
-        case "month":
-            $query = "SELECT SUM(total) AS powers, endTime AS etime FROM lights WHERE Did='{$Did}' AND (endtime BETWEEN '{$from}' AND '{$to}') GROUP BY month(endTime)";
-            break;
-        case "year":
-            $query = "SELECT SUM(total) AS powers, endTime AS etime FROM lights WHERE Did='{$Did}' AND (endtime BETWEEN '{$from}' AND '{$to}') GROUP BY year(endTime)";
-            break;
+    function getQuery($id, $f, $t, $fils)
+  {
+    if ($id == 51) {
+      $queryf = "SELECT SUM(total) AS powers, endTime AS etime FROM lights WHERE (endtime BETWEEN '{$f}' AND '{$t}') GROUP BY " . $fils . "(endTime)";
+    } elseif ($id == 52) {
+      $queryf = "SELECT SUM(total) AS powers, endTime AS etime FROM fans WHERE (endtime BETWEEN '{$f}' AND '{$t}') GROUP BY " . $fils . "(endTime)";
+    } elseif($id == 16 || $id == 17 || $id == 18 || $id == 19) {
+        $queryf = "SELECT SUM(total) AS powers, endTime AS etime FROM lights WHERE Did='{$id}' AND (endtime BETWEEN '{$f}' AND '{$t}') GROUP BY " . $fils . "(endTime)";
+    } elseif ($id == 26 || $id == 25){
+        $queryf = "SELECT SUM(total) AS powers, endTime AS etime FROM fans WHERE Did='{$id}' AND (endtime BETWEEN '{$f}' AND '{$t}') GROUP BY " . $fils . "(endTime)";
     }
+
+    return $queryf;
+  }
+
+  $query = getQuery($Did, $from, $to, $filter);
 
 
     $result = mysqli_query($conn, $query);

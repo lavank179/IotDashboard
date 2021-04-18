@@ -82,7 +82,7 @@ if (!isset($_SESSION)) {
         <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
         <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="./assets/apexcharts/dist/apexcharts.js"></script>
 
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>

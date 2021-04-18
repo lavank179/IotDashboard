@@ -5,7 +5,7 @@ if(isset($_POST['lightfan'])){
   $table = array();
   $i = $j = 0;
     
-    $query1 = "SELECT SUM(total) AS powers, endTime AS etime FROM `lights` GROUP BY date(timed)";
+    $query1 = "SELECT SUM(total) AS powers, endTime AS etime FROM `lights` GROUP BY date(timed) limit 5";
     $result1 = mysqli_query($conn, $query1);
     while($row = mysqli_fetch_array($result1)){
       $d = date_create($row['etime']);
@@ -17,7 +17,7 @@ if(isset($_POST['lightfan'])){
     }
 
     $i = $j = 0;
-    $query2 = "SELECT SUM(total) AS powers, endTime AS etime FROM `fans` GROUP BY date(timed)";
+    $query2 = "SELECT SUM(total) AS powers, endTime AS etime FROM `fans` GROUP BY date(timed) limit 5";
     $result2 = mysqli_query($conn, $query2);
     while($row = mysqli_fetch_array($result2)){
       $d = date_create($row['etime']);

@@ -28,6 +28,7 @@ function lightFan() {
     data: { lightfan: "apiloaded" },
     success: function (data) {
       let lights = JSON.parse(data);
+      
 
       let li1 = [],
         li2 = [];
@@ -37,6 +38,7 @@ function lightFan() {
         li2.push({ x: lights[3][u], y: lights[2][u] });
       }
 
+      console.log(li1, li2);
       chart.updateSeries([
         { name: "Lights", data: li1 },
         { name: "Fans", data: li2 },

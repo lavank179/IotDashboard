@@ -10,6 +10,7 @@
 #l6chart,
 #f1chart,
 #f2chart,
+#f3chart,
 #s1chart,
 #s2chart {
   width: 100%;
@@ -24,6 +25,7 @@
   #l6chart,
   #f1chart,
   #f2chart,
+  #f3chart,
   #s1chart,
   #s2chart {
     height: 550px;
@@ -38,6 +40,7 @@
 #l6chart,
 #f1chart,
 #f2chart,
+#f3chart,
 #s1chart,
 #s2chart {
   height: 350px;
@@ -52,6 +55,7 @@
 #l6chart,
 #f1chart,
 #f2chart,
+#f3chart,
 #s1chart,
 #s2chart {
   height: 250px;

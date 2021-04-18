@@ -206,7 +206,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterLightAll', 50)">
+                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterLightAll', 51)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -290,6 +290,11 @@
                     <h6>Fan 2</h6>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#f3" role="tab" aria-controls="history" aria-selected="false">
+                    <h6>All Fans</h6>
+                </a>
+            </li>
         </ul>
 
         <div class="tab-content">
@@ -312,7 +317,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterLight4', 19)">
+                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterFan1', 19)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -350,7 +355,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterLight3', 18)">
+                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterFan2', 18)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -367,6 +372,44 @@
                 </div>
                 <div>
                     <div id="f2chart"></div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="f3" role="tabpanel" aria-labelledby="deals-tab">
+                <div class="filterFanAll" role="alert">
+                    <span class="alert alert-danger"> &nbsp;&nbsp;No data Found. please give the necessary Input. </span>
+                </div>
+                <div class="row filterFanAll">
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <input placeholder="From Date" type="date" id="Fdate" class="form-control datepicker">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterFanAll', 52)">
+                                <i class="fad fa-download"></i> Download as CSV
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+
+                        <select class="custom-select md-form" required id="Fselect">
+                            <option value="date"> Daily </option>
+                            <option value="month"> Monthly </option>
+                            <option value="year"> Yearly </option>
+                        </select>
+
+                    </div>
+                </div>
+                <div>
+                    <div id="f3chart"></div>
                 </div>
             </div>
 
