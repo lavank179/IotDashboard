@@ -68,9 +68,10 @@ $(document).ready(function () {
     else if (n == 240) s = 4;
     $("#home #gc1").text(` Units : ${n} | Lights : ${s} `);
   }, 2000);
+
   // Add bottom label
   var label = chart.chartContainer.createChild(am4core.Label);
-  label.text = "Lights (w)";
+  label.text = "W/hr";
   label.align = "center";
 });
 
@@ -139,7 +140,7 @@ $(document).ready(function () {
   }, 2000);
   // Add bottom label
   var label = chart.chartContainer.createChild(am4core.Label);
-  label.text = "Fans (w)";
+  label.text = "W/hr";
   label.align = "center";
 });
 
@@ -277,4 +278,22 @@ $(document).ready(function () {
   setInterval(function () {
     hand.showValue(Math.random() * 100, 1000, am4core.ease.cubicOut);
   }, 2000);
+});
+
+$(document).ready(function () {
+  setInterval(function () {
+    $.ajax({
+      url: "./controllers/Usensors.php",
+      method: "POST",
+      success: function (data) {
+        var h = JSON.parse(data);
+        console.log(h[0], h[1]);
+        if (h[2] < 50) {
+          console.log("LOW");
+        } else {
+          console.log("HIGH");
+        }
+      },
+    });
+  }, 500);
 });

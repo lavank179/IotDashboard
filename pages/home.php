@@ -52,13 +52,15 @@
 
     <div class="col-lg-3 text-center">
         <div class="card">
-            <div id="chartdiv1" style="width: 100%; height: 23vh;">
+            <p class="live"><i class="fa fa-circle fa-xs text-danger Blink"></i> Live </p>
+            <divLive id="chartdiv1" style="width: 100%; height: 23vh;">
 
-            </div>
+            </divLive>
             <h6 id="gc1"></h6>
         </div>
         <br>
         <div class="card">
+            <p class="live"><i class="fa fa-circle fa-xs text-danger Blink"></i> Live </p>
             <div id="chartdiv3" style="width: 100%; height: 23vh;">
             </div>
             <h6 id="gc2"></h6>
@@ -70,16 +72,18 @@
 <div class="row">
     <div class="col-lg-3 text-center">
         <div class="card">
+            <p class="live"><i class="fa fa-circle fa-xs text-danger Blink"></i> Live </p>
             <div id="chartdiv2" style="width: 100%; height: 24vh;">
             </div>
             <h6>Units: 200 | Lights: 2</h6>
         </div>
         <br>
         <div class="card">
+            <p class="live"><i class="fa fa-circle fa-xs text-danger Blink"></i> Live </p>
             <div id="chartdiv4" style="width: 100%; height: 24vh;">
 
             </div>
-            <p>Temp: 30&#8451; / 86&#8457;</p>
+            <h6>Temp: 30&#8451; / 86&#8457;</h6>
         </div>
         <br>
     </div>
@@ -147,6 +151,13 @@
         </div>
         <br>
     </div>
+</div>
+
+
+<br><br>
+<div class="card">
+    <!-- <iframe width="720" height="480" src="http://192.168.0.102:8080/videofeed?Username=lavan1&Password=8072097287"></iframe> -->
+    <iframe width="100%" height="600" src="http://192.168.0.102:4747"></iframe>
 </div>
 <br><br><br>
 <p>This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.</p>

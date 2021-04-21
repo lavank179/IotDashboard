@@ -8,7 +8,7 @@ body {
   background: #fafafa;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -282,7 +282,7 @@ a.article:hover {
   height: 45px;
 }
 
-footer .ico a{
+footer .ico a {
   padding-right: 12px;
   padding-left: 12px;
 }
@@ -293,4 +293,21 @@ footer {
 
 footer .ico a i {
   color: white;
+}
+
+.live {
+  position: absolute;
+  top: 5px;
+  left: 11px;
+  font-size: small;
+}
+
+.Blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }

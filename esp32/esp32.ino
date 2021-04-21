@@ -10,6 +10,8 @@ int l1 = 16;
 int l2 = 17;
 int l3 = 18;
 int l4 = 19;
+int f1 = 25;
+int f2 = 26;
 
 // Define NTP Client to get time
 WiFiUDP ntpUDP;
@@ -19,6 +21,8 @@ String sL1 = "";
 String sL2 = "";
 String sL3 = "";
 String sL4 = "";
+String sF1 = "";
+String sF2 = "";
 
 void uploadTime(int i, String s, String e){
     HTTPClient http;
@@ -55,6 +59,8 @@ void setup() {
   pinMode(l2, OUTPUT);
   pinMode(l3, OUTPUT);
   pinMode(l4, OUTPUT);
+  pinMode(f1, OUTPUT);
+  pinMode(f2, OUTPUT);
   WiFi.begin(ssid, password);
  
   while (WiFi.status() != WL_CONNECTED) {
@@ -75,6 +81,8 @@ void ledControl(int idL, String stat){
       case 17: sL2 = getTimeNtp();break;
       case 18: sL3 = getTimeNtp();break;
       case 19: sL4 = getTimeNtp();break;
+      case 25: sF1 = getTimeNtp();break;
+      case 26: sF2 = getTimeNtp();break;
       }
      
      Serial.print("status");
@@ -87,6 +95,8 @@ void ledControl(int idL, String stat){
       case 17: uploadTime(idL, sL2, getTimeNtp());break;
       case 18: uploadTime(idL, sL3, getTimeNtp());break;
       case 19: uploadTime(idL, sL4, getTimeNtp());break;
+      case 25: uploadTime(idL, sF1, getTimeNtp());break;
+      case 26: uploadTime(idL, sF2, getTimeNtp());break;
       }
     Serial.print("status");
     Serial.println(idL);
@@ -116,11 +126,15 @@ void loop() {
       String led2 = doc[1]["status"];
       String led3 = doc[2]["status"];
       String led4 = doc[3]["status"];
+      String fan1 = doc[4]["status"];
+      String fan2 = doc[5]["status"];
    
         ledControl(l1, led1);
         ledControl(l2, led2);
         ledControl(l3, led3);
         ledControl(l4, led4);
+        ledControl(f1, fan1);
+        ledControl(f2, fan2);
       }
  
     else {
