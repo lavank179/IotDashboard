@@ -280,20 +280,20 @@ $(document).ready(function () {
   }, 2000);
 });
 
-$(document).ready(function () {
-  setInterval(function () {
-    $.ajax({
-      url: "./controllers/Usensors.php",
-      method: "POST",
-      success: function (data) {
-        var h = JSON.parse(data);
-        console.log(h[0], h[1]);
-        if (h[2] < 50) {
-          console.log("LOW");
-        } else {
-          console.log("HIGH");
-        }
-      },
-    });
-  }, 500);
-});
+// $(document).ready(function () {
+//   setInterval(function () {
+//     $.ajax({
+//       url: "./controllers/Usensors.php",
+//       method: "POST",
+//       success: function (data) {
+//         var h = JSON.parse(data);
+//         console.log(h[0], h[1]);
+//         if (h[2] < 50) {
+//           console.log("LOW");
+//         } else {
+//           console.log("HIGH");
+//         }
+//       },
+//     });
+//   }, 500);
+// });

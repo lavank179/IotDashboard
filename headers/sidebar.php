@@ -1,5 +1,5 @@
 <div class="sidebar-header">
-    <h5>IoT Dashboard</h5>
+    <p><img width="100%" height="100%" src="./assets/images/logo.png" alt="marvel iot" /></p>
 </div>
 <br>
 <ul class="list-unstyled components men">
