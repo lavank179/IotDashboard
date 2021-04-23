@@ -39,16 +39,14 @@ if (isset($_POST['Submit'])) {
                 <div class="col-lg-9 col-md-12 login-card">
                     <div class="row">
                         <div class="col-md-5 detail-part">
-                            <h1>Awesome Login Page Design</h1>
-                            <p>Please use your credentials to login.
-                                If you are not a member, please register. </p>
+                            <h1>Marvel IoT welcomes you</h1>
+                            <p> Please Login to enter Marvel IoT dashboard. </p>
                         </div>
                         <div class="col-md-7 logn-part log">
                             <div class="row">
                                 <div class="col-lg-10 col-md-12 mx-auto">
-                                    <div class="logo-cover text-center pt-5 pb-5">
-                                        <!-- <img src="./assets/login-images/logo.png" alt=""> -->
-                                        <h2> Marvel IoT </h2>
+                                    <div class="logo-cover text-center">
+                                        <img src="./assets/images/logo.png" alt="marvel iot" width="300px" height="300px" />
                                         <?php echo $accountNotExistErr; ?>
                                         <?php
                                         if ($login_error) {
@@ -56,7 +54,6 @@ if (isset($_POST['Submit'])) {
                                         }
                                         ?>
                                     </div>
-                                    <br><br><br>
                                     <form method="POST">
                                         <div class="form-outline mb-4">
                                             <input type="email" id="email" class="form-control" name="Email" placeholder="Email" />

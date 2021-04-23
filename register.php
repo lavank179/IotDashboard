@@ -41,20 +41,17 @@ include('./controllers/db.php');
                 <div class="col-lg-9 col-md-12 login-card">
                     <div class="row">
                         <div class="col-md-5 detail-part">
-                            <h1>Awesome Login Page Design</h1>
-                            <p>Please use your credentials to login.
-                                If you are not a member, please register. </p>
+                            <h1> Marvel IoT welcomes you </h1>
+                            <p> Please register to use Marvel IoT. </p>
                         </div>
                         <div class="col-md-7 logn-part reg">
                             <div class="row">
                                 <div class="col-lg-10 col-md-12 mx-auto">
-                                    <div class="logo-cover text-center pt-5 pb-5">
-                                        <!-- <img src="./assets/login-images/logo.png" alt=""> -->
-                                        <h2> Marvel IoT </h2>
+                                    <div class="logo-cover text-center">
+                                        <img src="./assets/images/logo.png" alt="marvel iot" width="300px" height="300px" />
                                         <?php echo $signupErr; ?>
                                         <?php echo $email_exist; ?>
                                     </div>
-                                    <br>
                                     <form method="POST">
                                         <div class="form-outline mb-4">
                                             <input type="text" id="username" class="form-control" name="Username" placeholder="UserName" />

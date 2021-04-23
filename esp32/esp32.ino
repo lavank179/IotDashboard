@@ -26,7 +26,7 @@ String sF2 = "";
 
 void uploadTime(int i, String s, String e){
     HTTPClient http;
-    http.begin("http://192.168.0.106/dp/iot_dashboard/controllers/Ulights.php");
+    http.begin("http://192.168.0.106/dp/marvel_iot/controllers/Ulights.php");
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");
     String httpRequestData = "id=" + String(i) + "&sTime=" + s + "&eTime=" + e + "";
     int httpResponseCode = http.POST(httpRequestData);
@@ -111,7 +111,7 @@ void loop() {
  
     HTTPClient http;
  
-    http.begin("http://192.168.0.106/dp/iot_dashboard/data.json"); //Specify the URL
+    http.begin("http://192.168.0.106/dp/marvel_iot/data.json"); //Specify the URL
     int httpCode = http.GET();                                        //Make the request
  
     if (httpCode > 0) { //Check for the returning code
