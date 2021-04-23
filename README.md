@@ -25,36 +25,49 @@ Then, open a browser, type localhost/dashboard - if the xampp is correctly insta
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+
+
+
 ## Dashboard website code
 
-you can access the localhost webapp project codes in your computer at this location - C:\xampp\htdocs\
+ -- you can access the localhost webapp project codes in your computer at this location - C:\xampp\htdocs\
 
-you put your project codes here - C:\xampp\htdocs\dp\
+ -- you put your project codes here - C:\xampp\htdocs\dp\
+
+
+
+
 
 ## Cloning this repository
 
-Download this repo code as Zip file and extract it to your computer.
+ -- Download this repo code as Zip file and extract it to your computer.
 
-After extracting, Copy the iot_dashboard folder to this location - C:\xampp\htdocs\dp\
+ -- After extracting, Copy the iot_dashboard folder to this location - C:\xampp\htdocs\dp\
 
-After Copying - go to browser and open - localhost/dp/iot_dashboard/ 
- you can see the website is loading....
+ -- After Copying - go to browser and open - localhost/dp/iot_dashboard/ 
+    you can see the website is loading....
+
+
 
 
 ## Mysql Tables adding
 
-Download the sql file from here - [dp.sql](https://drive.google.com/file/d/1Tr4U3KJ2Dma8o8uWcw4_LeSj7_BCC1q9/view?usp=sharing).
+ - Download the sql file from here - [dp.sql](https://drive.google.com/file/d/1Tr4U3KJ2Dma8o8uWcw4_LeSj7_BCC1q9/view?usp=sharing).
 
-Go to localhost/phpmyadmin in browser - you can see the database there.
+ - Go to localhost/phpmyadmin in browser - you can see the database there.
 
-import the downloaded dp.sql file to phpmyadmin database by accessing the Import menu.
+ - import the downloaded dp.sql file to phpmyadmin database by accessing the Import menu.
 
-Then you can see that the database is loaded to your DB.
+ - Then you can see that the database is loaded to your DB.
+
+
+
 
 ## Connect DB - Webapp
 
-go to project code and change the neccessary db login details - 
- - - most of the cases, if your db is localhost don't change the user details.
+ - go to project code and change the neccessary db login details - 
+ - most of the cases, if your db is localhost don't change the user details.
+
 
 
 # Hurray your app is now working.
