@@ -30,9 +30,9 @@ Then, open a browser, type localhost/dashboard - if the xampp is correctly insta
 
 ## Dashboard website code
 
- -- you can access the localhost webapp project codes in your computer at this location - C:\xampp\htdocs\
+ - - you can access the localhost webapp project codes in your computer at this location - C:\xampp\htdocs\
 
- -- you put your project codes here - C:\xampp\htdocs\dp\
+ - - you put your project codes here - C:\xampp\htdocs\dp\
 
 
 
@@ -40,11 +40,11 @@ Then, open a browser, type localhost/dashboard - if the xampp is correctly insta
 
 ## Cloning this repository
 
- -- Download this repo code as Zip file and extract it to your computer.
+ - - Download this repo code as Zip file and extract it to your computer.
 
- -- After extracting, Copy the iot_dashboard folder to this location - C:\xampp\htdocs\dp\
+ - - After extracting, Copy the iot_dashboard folder to this location - C:\xampp\htdocs\dp\
 
- -- After Copying - go to browser and open - localhost/dp/iot_dashboard/ 
+ - - After Copying - go to browser and open - localhost/dp/iot_dashboard/ 
     you can see the website is loading....
 
 
