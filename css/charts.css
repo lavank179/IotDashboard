@@ -16,7 +16,8 @@
 #f2chart,
 #f3chart,
 #s1chart,
-#s2chart {
+#s2chart,
+#s3chart {
   width: 100%;
 }
 
@@ -31,7 +32,8 @@
   #f2chart,
   #f3chart,
   #s1chart,
-  #s2chart {
+  #s2chart,
+  #s3chart {
     height: 550px;
   }
 }
@@ -46,7 +48,8 @@
   #f2chart,
   #f3chart,
   #s1chart,
-  #s2chart {
+  #s2chart,
+  #s3chart {
     height: 350px;
   }
 }
@@ -61,7 +64,8 @@
   #f2chart,
   #f3chart,
   #s1chart,
-  #s2chart {
+  #s2chart,
+  #s3chart {
     height: 250px;
   }
 

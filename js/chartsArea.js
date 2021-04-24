@@ -48,16 +48,7 @@ function lightFan() {
 
 function TempLevel() {
   var options = {
-    series: [
-      {
-        name: "series1",
-        data: [31, 40, 28, 51, 42, 109, 100],
-      },
-      {
-        name: "series2",
-        data: [11, 32, 45, 32, 34, 52, 41],
-      },
-    ],
+    series: [],
     chart: {
       height: 340,
       type: "area",
@@ -70,37 +61,32 @@ function TempLevel() {
     },
     xaxis: {
       type: "datetime",
-      categories: [
-        "2018-09-19T00:00:00.000Z",
-        "2018-09-19T01:30:00.000Z",
-        "2018-09-19T02:30:00.000Z",
-        "2018-09-19T03:30:00.000Z",
-        "2018-09-19T04:30:00.000Z",
-        "2018-09-19T05:30:00.000Z",
-        "2018-09-19T06:30:00.000Z",
-      ],
-    },
-    tooltip: {
-      x: {
-        format: "dd/MM/yy HH:mm",
-      },
-    },
-    title: {
-      text: "Sensors comparison",
-      align: "left",
-      margin: 10,
-      offsetX: 0,
-      offsetY: 0,
-      floating: false,
-      style: {
-        fontSize: "16px",
-        fontWeight: "normal",
-        fontFamily: "poppins",
-        color: "#3266FF",
-      },
     },
   };
 
   var chart = new ApexCharts(document.querySelector("#chartA2"), options);
   chart.render();
+  $.ajax({
+    url: "./controllers/fetch/tempmoist.php",
+    method: "POST",
+    async: false,
+    data: { tempmoist: "apiloaded" },
+    success: function (data) {
+      let dat = JSON.parse(data);
+
+      let li1 = [],
+        li2 = [];
+
+      for (let u = 0; u < dat[0].length; u++) {
+        li1.push({ x: dat[1][u], y: dat[0][u] });
+        li2.push({ x: dat[3][u], y: dat[2][u] });
+      }
+
+      console.log(li1, li2);
+      chart.updateSeries([
+        { name: "Lights", data: li1 },
+        { name: "Fans", data: li2 },
+      ]);
+    },
+  });
 }

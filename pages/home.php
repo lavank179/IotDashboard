@@ -102,42 +102,26 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Temperature</th>
+                            <th scope="col">Humidity</th>
+                            <th scope="col">Moisture</th>
+                            <th scope="col">Time</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td >Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
+                        <?php include('./controllers/db.php');
+                        $sql = "SELECT * From sensors ORDER BY timed DESC LIMIT 5";
+                        $result = mysqli_query($conn, $sql);
+                        $i = 0;
+                        $j = 0;
+                        while ($row = mysqli_fetch_array($result)) { ?>
+                            <tr>
+                                <td><?php echo $row['temperature']; ?></td>
+                                <td><?php echo $row['humidity']; ?></td>
+                                <td><?php echo $row['moisture']; ?></td>
+                                <td><?php echo $row['timed']; ?></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
