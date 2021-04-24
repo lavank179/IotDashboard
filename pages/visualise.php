@@ -429,19 +429,28 @@
 
 
 <div class="card">
-    <div class="col-sm-12">
-        <ul class="nav nav-tabs" id="bologna-list" role="tablist">
+    <div class="col-sm-12 FAN">
+        <ul class="nav nav-tabs" id="bologna-listS" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" href="#Tm1" role="tab" aria-controls="description" aria-selected="true">
-                    <h6>Temperature Sensor 1</h6>
+                <a class="nav-link active" href="#T" role="tab" aria-controls="description" aria-selected="true">
+                    <h6>Temperature</h6>
                 </a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="#H" role="tab" aria-controls="history" aria-selected="false">
+                    <h6>Humidity</h6>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#Soil" role="tab" aria-controls="history" aria-selected="false">
+                    <h6>Soil Moisture</h6>
+                </a>
+            </li>
         </ul>
 
         <div class="tab-content">
-            <div class="tab-pane active" id="Tm1" role="tabpanel">
-                <h5> Temperature Sensor 1 Data of the given time period. Filteration based on the daily, monthly and yearly wise. </h5>
+
+            <div class="tab-pane" id="T" role="tabpanel" aria-labelledby="history-tab">
                 <div class="filterSen1" role="alert">
                     <span class="alert alert-danger"> &nbsp;&nbsp;No data Found. please give the necessary Input. </span>
                 </div>
@@ -456,8 +465,15 @@
                             <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
                         </div>
                     </div>
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterFan1', 19)">
+                                <i class="fad fa-download"></i> Download as CSV
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
 
                         <select class="custom-select md-form" required id="Fselect">
                             <option value="date"> Daily </option>
@@ -467,36 +483,12 @@
 
                     </div>
                 </div>
-                <div id="s1chart"></div>
+                <div>
+                    <div id="s1chart"></div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
 
-
-
-
-
-
-<br>
-<!----------------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-<div class="card">
-    <div class="col-sm-12">
-        <ul class="nav nav-tabs" id="bologna-list" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" href="#Tm2" role="tab" aria-controls="description" aria-selected="true">
-                    <h6>Temperature Sensor 2</h6>
-                </a>
-            </li>
-
-        </ul>
-
-        <div class="tab-content">
-            <div class="tab-pane active" id="Tm2" role="tabpanel">
+            <div class="tab-pane" id="H" role="tabpanel" aria-labelledby="deals-tab">
                 <div class="filterSen2" role="alert">
                     <span class="alert alert-danger"> &nbsp;&nbsp;No data Found. please give the necessary Input. </span>
                 </div>
@@ -511,8 +503,15 @@
                             <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
                         </div>
                     </div>
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterFan2', 18)">
+                                <i class="fad fa-download"></i> Download as CSV
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
 
                         <select class="custom-select md-form" required id="Fselect">
                             <option value="date"> Daily </option>
@@ -522,8 +521,45 @@
 
                     </div>
                 </div>
-                <div id="s2chart"></div>
+                <div>
+                    <div id="s2chart"></div>
+                </div>
             </div>
+            <div class="tab-pane active" id="Soil" role="tabpanel">
+                <div class="filterSen3" role="alert">
+                    <span class="alert alert-danger"> &nbsp;&nbsp;No data Found. please give the necessary Input. </span>
+                </div>
+                <div class="row filterSen3">
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <input placeholder="From Date" type="date" id="Fdate" class="form-control datepicker">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
+                        </div>
+                    </div>
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <select class="custom-select md-form" required id="Fselect">
+                            <option value="date"> Daily </option>
+                            <option value="month"> Monthly </option>
+                            <option value="year"> Yearly </option>
+                        </select>
+                    </div>
+                </div>
+                <div id="s3chart"></div>
+            </div>
+
         </div>
     </div>
 </div>
+
+
+
+
+
+
+<br>
+<!----------------------------------------------------------------------------------------------------------------------------------------------->

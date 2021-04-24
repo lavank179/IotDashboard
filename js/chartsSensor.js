@@ -1,10 +1,15 @@
+$("#bologna-listS a").on("click", function (e) {
+  e.preventDefault();
+  $(this).tab("show");
+});
+
 $(document).ready(function () {
   setInterval(function () {
     let [v1, v2, v3] = getInputValues("filterSen1");
 
     changeAlert("filterSen1", v1, v2, v3);
 
-    getDataAll(v1, v2, v3, 30, "Temperature Sensor 1", "s1chart", "sensors");
+    getDataAll(v1, v2, v3, 30, "Temperature", "s1chart", "sensors");
   }, 500);
 });
 
@@ -14,17 +19,17 @@ $(document).ready(function () {
 
     changeAlert("filterSen2", v1, v2, v3);
 
-    getDataAll(v1, v2, v3, 31, "Temperature Sensor 2", "s2chart", "sensors");
+    getDataAll(v1, v2, v3, 31, "Humidity", "s2chart", "sensors");
   }, 500);
 });
 
 $(document).ready(function () {
   setInterval(function () {
-    let [v1, v2, v3] = getInputValues("filterSen2");
+    let [v1, v2, v3] = getInputValues("filterSen3");
 
-    changeAlert("filterSen2", v1, v2, v3);
+    changeAlert("filterSen3", v1, v2, v3);
 
-    getDataAll(v1, v2, v3, 32, "Temperature Sensor 2", "s2chart", "sensors");
+    getDataAll(v1, v2, v3, 32, "Soil Moisture", "s3chart", "sensors");
   }, 500);
 });
 function temChart(v1, v2, v3) {
