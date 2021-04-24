@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="./assets/MDBootstrap-pro/MDB-Pro_4.11.0/css/mdb.min.css">
 <link rel="stylesheet" href="./assets/fontawesome-pro-5.15.1-web/css/all.min.css">
 
+<!-- Google Material icons -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<link rel="shortcut icon" href="./assets/images/favicon.ico" />
+
 
 
 

@@ -11,6 +11,7 @@ $(document).ready(function () {
   axis.strictMinMax = true;
 
   var colorSet = new am4core.ColorSet();
+  console.log(colorSet);
 
   var range0 = axis.axisRanges.create();
   range0.value = 0;
@@ -79,7 +80,7 @@ $(document).ready(function () {
   am4core.useTheme(am4themes_animated);
 
   // create chart
-  var chart = am4core.create("chartdiv3", am4charts.GaugeChart);
+  var chart = am4core.create("chartdiv2", am4charts.GaugeChart);
   chart.innerRadius = -15;
 
   var axis = chart.xAxes.push(new am4charts.ValueAxis());
@@ -148,7 +149,7 @@ $(document).ready(function () {
   am4core.useTheme(am4themes_animated);
 
   // create chart
-  var chart = am4core.create("chartdiv2", am4charts.GaugeChart);
+  var chart = am4core.create("chartdiv3", am4charts.GaugeChart);
   chart.innerRadius = am4core.percent(82);
 
   /**
@@ -239,6 +240,7 @@ $(document).ready(function () {
       1000,
       am4core.ease.cubicOut
     ).start();
+    $("#home #gc3").text(` Soil moisture : ${value} %`);
   }, 2000);
 });
 
@@ -277,6 +279,7 @@ $(document).ready(function () {
   var hand = chart.hands.push(new am4charts.ClockHand());
   setInterval(function () {
     hand.showValue(Math.random() * 100, 1000, am4core.ease.cubicOut);
+    $("#home #gc4").text(` Temp : 30 C / 82 F`);
   }, 2000);
 });
 

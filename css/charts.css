@@ -2,6 +2,10 @@
   font-family: "Lemonada";
 }
 
+#mobile-head {
+  display: none;
+}
+
 #visualise #l1chart,
 #l2chart,
 #l3chart,
@@ -32,32 +36,61 @@
   }
 }
 @media (min-width: 576px) and (max-width: 990px) {
-    #visualise #l1chart,
-#l2chart,
-#l3chart,
-#l4chart,
-#l5chart,
-#l6chart,
-#f1chart,
-#f2chart,
-#f3chart,
-#s1chart,
-#s2chart {
-  height: 350px;
-}
+  #visualise #l1chart,
+  #l2chart,
+  #l3chart,
+  #l4chart,
+  #l5chart,
+  #l6chart,
+  #f1chart,
+  #f2chart,
+  #f3chart,
+  #s1chart,
+  #s2chart {
+    height: 350px;
+  }
 }
 @media (max-width: 576px) {
-    #visualise #l1chart,
-#l2chart,
-#l3chart,
-#l4chart,
-#l5chart,
-#l6chart,
-#f1chart,
-#f2chart,
-#f3chart,
-#s1chart,
-#s2chart {
-  height: 250px;
+  #visualise #l1chart,
+  #l2chart,
+  #l3chart,
+  #l4chart,
+  #l5chart,
+  #l6chart,
+  #f1chart,
+  #f2chart,
+  #f3chart,
+  #s1chart,
+  #s2chart {
+    height: 250px;
+  }
+
+  #mobile-head {
+    color: #6ca16d;
+    display: block;
+  }
 }
+
+.popover{
+  border: 2px solid #4285F4;
+}
+
+.popover-content{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.live2 {
+  position: absolute;
+  top: 5px;
+  left: 11px;
+  font-size: small;
+  background-color: black;
+  color: white;
+}
+
+#home .card-header {
+  height: 43px;
+  font-size: 20px;
+  color: white;
+  background-color: black;
 }

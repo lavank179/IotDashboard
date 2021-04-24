@@ -29,6 +29,8 @@ if (!isset($_SESSION)) {
                     <button id="sidebarCollapse" class="btn btn-sm btn-outline-primary shadow-none">
                         <i class="fas fa-align-left"></i>
                     </button>
+
+                    <h3 class="ml-auto mr-auto" id="mobile-head"> Marvel IoT </h3>
                     <button class="d-inline-block d-lg-none ml-auto btn btn-sm btn-outline-primary shadow-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-right"></i>
                     </button>
@@ -36,16 +38,24 @@ if (!isset($_SESSION)) {
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none" onclick="RefreshAll();"> <i class="fas fa-sync-alt"></i> </a>
+                                <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none" onclick="RefreshAll();" data-toggle="popover" data-content="Refresh All" data-placement="bottom" data-trigger="hover"> <i class="fas fa-sync-alt d-inline"></i>
+                                    <div class="d-lg-none d-md-block d-sm-block d-inline">Refresh all data</div>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none"> <i class="far fa-bell"></i> </a>
+                                <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none" data-toggle="popover" data-content="Notifications" data-placement="bottom" data-trigger="hover"> <i class="far fa-bell d-inline"></i>
+                                    <div class="d-lg-none d-md-block d-sm-block d-inline">Notifications</div>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none"> <i class="fas fa-user-circle"></i> </a>
+                                <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none" data-toggle="popover" data-content="User Details" data-placement="bottom" data-trigger="hover"> <i class="fas fa-user-circle d-inline"></i>
+                                    <div class="d-lg-none d-md-block d-sm-block d-inline">User Details</div>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none" onclick="Logout();"> <i class="far fa-sign-out-alt"></i> </a>
+                                <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none" onclick="Logout();" data-toggle="popover" data-content="Logout" data-placement="bottom" data-trigger="hover"> <i class="far fa-sign-out-alt d-inline"></i>
+                                    <div class="d-lg-none d-md-block d-sm-block d-inline">Logout</div>
+                                </a>
                             </li>
                         </ul>
                     </div>

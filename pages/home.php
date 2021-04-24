@@ -1,10 +1,7 @@
 <div class="row">
     <div class="col-lg-3">
-        <div class="card text-center" id="lig" style="height: 420px;">
-            <div class="card-header" style="background: white;">
-                <h3 style="color: #3266FF;"> Lights&nbsp; </h3>
-
-            </div>
+        <div class="card text-center hoverable" id="lig" style="height: 420px;">
+            <div class="card-header">Lights</div>
             <div class="card-body">
                 <table class="table table-borderless">
                     <tbody id="devicesCollectionLight">
@@ -19,11 +16,8 @@
     </div>
 
     <div class="col-lg-3">
-        <div class="card text-center" id="fans" style="height: 420px;">
-            <div class="card-header" style="background: white;">
-                <h3 style="color: #3266FF;"> Fans&nbsp; </h3>
-
-            </div>
+        <div class="card text-center hoverable" id="fans" style="height: 420px;">
+            <div class="card-header">Fans</div>
             <div class="card-body">
                 <table class="table table-borderless">
                     <tbody id="devicesCollectionFan">
@@ -39,10 +33,14 @@
     </div>
 
     <div class="col-lg-3 text-center">
-        <div class="card">
-            <div id="chartA1" style="width: 100%; height: 420px;">
+        <div class="card hoverable">
+            <div class="card-header">Light-Fan comparison</div>
+            <div class="card-body">
+                <div id="chartA1" style="width: 100%; height: 100px;">
 
+                </div>
             </div>
+
         </div>
         <br>
 
@@ -51,17 +49,17 @@
 
 
     <div class="col-lg-3 text-center">
-        <div class="card">
+        <div class="card hoverable">
             <p class="live"><i class="fa fa-circle fa-xs text-danger Blink"></i> Live </p>
-            <divLive id="chartdiv1" style="width: 100%; height: 23vh;">
+            <div id="chartdiv1" style="width: 100%; height: 23vh;">
 
-            </divLive>
+            </div>
             <h6 id="gc1"></h6>
         </div>
         <br>
-        <div class="card">
+        <div class="card hoverable">
             <p class="live"><i class="fa fa-circle fa-xs text-danger Blink"></i> Live </p>
-            <div id="chartdiv3" style="width: 100%; height: 23vh;">
+            <div id="chartdiv2" style="width: 100%; height: 23vh;">
             </div>
             <h6 id="gc2"></h6>
 
@@ -71,83 +69,79 @@
 <br>
 <div class="row">
     <div class="col-lg-3 text-center">
-        <div class="card">
+        <div class="card hoverable">
             <p class="live"><i class="fa fa-circle fa-xs text-danger Blink"></i> Live </p>
-            <div id="chartdiv2" style="width: 100%; height: 24vh;">
+            <div id="chartdiv3" style="width: 100%; height: 24vh;">
             </div>
-            <h6>Units: 200 | Lights: 2</h6>
+            <h6 id="gc3"></h6>
         </div>
         <br>
-        <div class="card">
+        <div class="card hoverable">
             <p class="live"><i class="fa fa-circle fa-xs text-danger Blink"></i> Live </p>
             <div id="chartdiv4" style="width: 100%; height: 24vh;">
 
             </div>
-            <h6>Temp: 30&#8451; / 86&#8457;</h6>
+            <h6 id="gc4"></h6>
         </div>
         <br>
     </div>
     <div class="col-lg-4">
-        <div class="card">
-            <div id="chartA2" style="width: 100%; height: 60.8vh;">
+        <div class="card text-center hoverable">
+            <div class="card-header">Temperature & humidity</div>
+            <div class="card-body">
+                <div id="chartA2" style="width: 100%; height: 47.5vh;">
+                </div>
             </div>
         </div>
         <br>
     </div>
     <div class="col-lg-5">
-        <div class="card">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card text-center hoverable">
+            <div class="card-header">Weather Data</div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td >Larry the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
         <br>
     </div>
@@ -155,11 +149,22 @@
 
 
 <br><br>
-<div class="card">
-    <!-- <iframe width="720" height="480" src="http://192.168.0.102:8080/videofeed?Username=lavan1&Password=8072097287"></iframe> -->
-    <iframe width="100%" height="600" src="http://192.168.0.102:4747"></iframe>
+<!-- Default switch -->
+<div class="btn bg-light text-center hoverable">
+    <div class="custom-control custom-switch">
+        <input class="custom-control-input" type="checkbox" id="camswitch" />
+        <label class="custom-control-label" for="camswitch"> Surveillance Camera/CCTV </label>
+    </div>
 </div>
+<br><br>
+<div id="camera" class=""><iframe class="card hoverable" width="100%" height="600" src="http://192.168.0.102:4747"></iframe></div>
+
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
 <br><br><br>
+
+
+
 <p>This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.</p>
 <br><br><br>
 <!-- Modal -->

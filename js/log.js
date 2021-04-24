@@ -1,6 +1,7 @@
 $("#visualise").hide();
 $("#profile").hide();
 $("#contact").hide();
+document.getElementById("camera").style.display = 'none';
 getSwitch(0);
 
 function RefreshAll() {
@@ -269,3 +270,17 @@ $('footer a[href*="#"]').on("click", function (e) {
 function Logout() {
   window.location.href = "./controllers/auth/logout.php";
 }
+
+// Popovers
+$(function () {
+  $('[data-toggle="popover"]').popover();
+});
+
+let camSwitch = document.querySelector("#camswitch");
+camSwitch.addEventListener("change", function () {
+  if (camSwitch.checked == true) {
+    document.getElementById("camera").style.display = 'block';
+  } else {
+    document.getElementById("camera").style.display = 'none';
+  }
+});

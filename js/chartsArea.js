@@ -5,7 +5,7 @@ function lightFan() {
   var options = {
     series: [],
     chart: {
-      height: 400,
+      height: 323,
       type: "area",
     },
     dataLabels: {
@@ -16,20 +16,6 @@ function lightFan() {
     },
     xaxis: {
       type: "datetime",
-    },
-    title: {
-      text: "Light-Fan comparison",
-      align: "left",
-      margin: 10,
-      offsetX: 0,
-      offsetY: 0,
-      floating: false,
-      style: {
-        fontSize: "16px",
-        fontWeight: "normal",
-        fontFamily: "poppins",
-        color: "#3266FF",
-      },
     },
   };
 
@@ -73,7 +59,7 @@ function TempLevel() {
       },
     ],
     chart: {
-      height: 350,
+      height: 340,
       type: "area",
     },
     dataLabels: {

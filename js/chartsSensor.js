@@ -1,75 +1,32 @@
-let alert33 = $(".filterSen1 .alert");
-let alert44 = $(".filterSen2 .alert");
-alert33.hide();
-alert44.hide();
-
-
 $(document).ready(function () {
   setInterval(function () {
-    fromDate = document.querySelector(".filterSen1 #Fdate").value;
-    toDate = document.querySelector(".filterSen1 #Tdate").value;
-    f = document.querySelector(".filterSen1 #Fselect");
-    filterBy = f.options[f.selectedIndex].value;
+    let [v1, v2, v3] = getInputValues("filterSen1");
 
-    if (fromDate != "" && toDate != "" && filterBy != "") {
-      alert33.hide();
-    } else {
-      alert33.show();
-    }
+    changeAlert("filterSen1", v1, v2, v3);
 
-    fromDate = fromDate + " 00:00:00";
-    toDate = toDate + " 23:59:59";
-
-    $.ajax({
-      url: "./controllers/fetch/sensors/temp.php",
-      method: "POST",
-      data: {
-        fDate: fromDate,
-        tDate: toDate,
-        fils: filterBy,
-        Did: 16,
-      },
-      success: function (data) {
-        let h = JSON.parse(data);
-        temChart(h, "Temperature Sensor 1", "s1chart");
-      },
-    });
+    getDataAll(v1, v2, v3, 30, "Temperature Sensor 1", "s1chart", "sensors");
   }, 500);
 });
 
 $(document).ready(function () {
   setInterval(function () {
-    fromDate = document.querySelector(".filterSen2 #Fdate").value;
-    toDate = document.querySelector(".filterSen2 #Tdate").value;
-    f = document.querySelector(".filterSen2 #Fselect");
-    filterBy = f.options[f.selectedIndex].value;
+    let [v1, v2, v3] = getInputValues("filterSen2");
 
-    if (fromDate != "" && toDate != "" && filterBy != "") {
-      alert44.hide();
-    } else {
-      alert44.show();
-    }
+    changeAlert("filterSen2", v1, v2, v3);
 
-    fromDate = fromDate + " 00:00:00";
-    toDate = toDate + " 23:59:59";
-
-    $.ajax({
-      url: "./controllers/fetch/sensors/temp.php",
-      method: "POST",
-      data: {
-        fDate: fromDate,
-        tDate: toDate,
-        fils: filterBy,
-        Did: 17,
-      },
-      success: function (data) {
-        let h = JSON.parse(data);
-        temChart(h, "Temperature Sensor 2", "s2chart");
-      },
-    });
+    getDataAll(v1, v2, v3, 31, "Temperature Sensor 2", "s2chart", "sensors");
   }, 500);
 });
 
+$(document).ready(function () {
+  setInterval(function () {
+    let [v1, v2, v3] = getInputValues("filterSen2");
+
+    changeAlert("filterSen2", v1, v2, v3);
+
+    getDataAll(v1, v2, v3, 32, "Temperature Sensor 2", "s2chart", "sensors");
+  }, 500);
+});
 function temChart(v1, v2, v3) {
   google.charts.load("current", { packages: ["corechart"] });
   google.charts.setOnLoadCallback(drawBasic);
@@ -87,9 +44,7 @@ function temChart(v1, v2, v3) {
       },
     };
 
-    var chart = new google.visualization.AreaChart(
-      document.getElementById(v3)
-    );
+    var chart = new google.visualization.AreaChart(document.getElementById(v3));
 
     chart.draw(data, options);
   }
