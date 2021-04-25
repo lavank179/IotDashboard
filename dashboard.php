@@ -65,6 +65,7 @@ if (!isset($_SESSION)) {
                     <div id="home"><?php include('./pages/home.php'); ?></div>
                     <div id="visualise"><?php include('./pages/visualise.php'); ?></div>
                     <div id="profile"><?php include('./pages/profile.php'); ?></div>
+                    <div id="contact"><?php include('./pages/contact.php'); ?></div>
 
 
                 </div>

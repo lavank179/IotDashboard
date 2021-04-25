@@ -12,7 +12,7 @@
                         <a class="" href="https://www.linkedin.com/in/lavankumarch179/"><i class="fab fa-linkedin fa-lg"></i></a>
                         <a class="" href="https://github.com/lavank179"><i class="fab fa-github fa-lg"></i></a>
                         <a class="" href="mailto:chlavankumar179@gmail.com"><i class="far fa-envelope-open fa-lg"></i></a>
-                        <a style="color: white;">© Copyright 2021 - Lavan Kumar CH & Sela Kaushik</a>
+                        <a style="color: white;">© Copyright 2021 - Lavan Kumar CH & Sela Kaushik & Rajesh M</a>
                     </div>
                 </div>
             </div>
