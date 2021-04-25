@@ -82,7 +82,7 @@
     <div class="col-sm-3"></div>
 </div>
 <br><br><br><br><br><br><br><br><br><br>
-<!-- <p>This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.</p> -->
+<p>This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.</p>
 <br><br><br>
 <?php } else {
             echo "<>

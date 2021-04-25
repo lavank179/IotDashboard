@@ -3,6 +3,8 @@
 include('../db.php');
 if(isset($_POST['fils'])){
 
+  $titles = "";
+
   function getQuery($id, $f, $t, $fils)
   {
     if ($id == 30) {
@@ -19,6 +21,9 @@ if(isset($_POST['fils'])){
     $to = $_POST['tDate'];
     $filter = $_POST['fils'];
     $Did = intval($_POST['Did']);
+    if($Did == 30) $titles = "Temperature";
+    elseif($Did == 31) $titles = "Humidity";
+    elseif($Did == 32) $titles = "Soil Moisture";
     
     $query = getQuery($Did, $from, $to, $filter);
 
@@ -34,7 +39,7 @@ if(isset($_POST['fils'])){
               'type' => 'datetime'
             ),
             array(
-              'label' => 'Power', 
+              'label' => $titles, 
               'type' => 'number'
             )
             );

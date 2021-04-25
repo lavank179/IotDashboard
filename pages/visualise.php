@@ -1,5 +1,3 @@
-<h5> Light 4 Data of the given time period. Filteration based on the daily, monthly and yearly wise.Filteration based on the daily, monthly and yearly wise </h5>
-
 <div class="card">
     <div class="col-sm-12 LIGHT">
         <ul class="nav nav-tabs" id="bologna-listL" role="tablist">
@@ -55,7 +53,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterLight1', 16)">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterLight1', 16)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -93,7 +91,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterLight2', 17)">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterLight2', 17)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -131,7 +129,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterLight3', 18)">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterLight3', 18)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -168,7 +166,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterLight4', 19)">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterLight4', 19)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -206,7 +204,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterLightAll', 51)">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterLightAll', 51)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -244,7 +242,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterLightZones', 60)">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterLightZones', 60)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -317,7 +315,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterFan1', 19)">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterFan1', 19)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -355,7 +353,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterFan2', 18)">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterFan2', 18)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -393,7 +391,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterFanAll', 52)">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterFanAll', 52)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -468,7 +466,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterFan1', 19)">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterSen1', 30)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -506,7 +504,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary btn-block btn-md" onclick="getCSVdata('filterFan2', 18)">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterSen2', 31)">
                                 <i class="fad fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -540,8 +538,15 @@
                             <input placeholder="To Date" type="date" id="Tdate" class="form-control datepicker">
                         </div>
                     </div>
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-2">
+                        <div class="md-form">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterSen3', 32)">
+                                <i class="fad fa-download"></i> Download as CSV
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
                         <select class="custom-select md-form" required id="Fselect">
                             <option value="date"> Daily </option>
                             <option value="month"> Monthly </option>
@@ -559,7 +564,6 @@
 
 
 
-
-
-<br>
+<p>This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.This is some text to adjust the space.</p>
+<br><br><br>
 <!----------------------------------------------------------------------------------------------------------------------------------------------->

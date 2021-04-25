@@ -11,25 +11,33 @@ $(document).ready(function () {
   axis.strictMinMax = true;
 
   var colorSet = new am4core.ColorSet();
-  console.log(colorSet);
+  // for(let j = 0; j<40; j++){
+  //   console.log(colorSet.getIndex(j).hex);
+  //   let p = document.createElement('p');
+  //   p.style.backgroundColor = colorSet.getIndex(j).hex;
+  //   p.style.width = "50px";
+  //   p.innerText = j;
+  //   var cl = document.querySelector("#colors");
+  //   cl.append(p);
+  // }
 
   var range0 = axis.axisRanges.create();
   range0.value = 0;
   range0.endValue = 100;
   range0.axisFill.fillOpacity = 1;
-  range0.axisFill.fill = colorSet.getIndex(15);
+  range0.axisFill.fill = colorSet.getIndex(17);
 
   var range1 = axis.axisRanges.create();
   range1.value = 100;
   range1.endValue = 210;
   range1.axisFill.fillOpacity = 1;
-  range1.axisFill.fill = colorSet.getIndex(2);
+  range1.axisFill.fill = colorSet.getIndex(21);
 
   var range2 = axis.axisRanges.create();
   range2.value = 210;
   range2.endValue = 280;
   range2.axisFill.fillOpacity = 1;
-  range2.axisFill.fill = colorSet.getIndex(4);
+  range2.axisFill.fill = colorSet.getIndex(10);
 
   var hand = chart.hands.push(new am4charts.ClockHand());
 
@@ -94,19 +102,19 @@ $(document).ready(function () {
   range0.value = 0;
   range0.endValue = 70;
   range0.axisFill.fillOpacity = 1;
-  range0.axisFill.fill = colorSet.getIndex(0);
+  range0.axisFill.fill = colorSet.getIndex(17);
 
   var range1 = axis.axisRanges.create();
   range1.value = 70;
   range1.endValue = 200;
   range1.axisFill.fillOpacity = 1;
-  range1.axisFill.fill = colorSet.getIndex(2);
+  range1.axisFill.fill = colorSet.getIndex(21);
 
   var range2 = axis.axisRanges.create();
   range2.value = 200;
   range2.endValue = 250;
   range2.axisFill.fillOpacity = 1;
-  range2.axisFill.fill = colorSet.getIndex(4);
+  range2.axisFill.fill = colorSet.getIndex(10);
 
   var hand = chart.hands.push(new am4charts.ClockHand());
 
@@ -190,13 +198,13 @@ $(document).ready(function () {
   range0.value = 0;
   range0.endValue = 50;
   range0.axisFill.fillOpacity = 1;
-  range0.axisFill.fill = colorSet.getIndex(0);
+  range0.axisFill.fill = colorSet.getIndex(17);
 
   var range1 = axis2.axisRanges.create();
   range1.value = 50;
   range1.endValue = 100;
   range1.axisFill.fillOpacity = 1;
-  range1.axisFill.fill = colorSet.getIndex(2);
+  range1.axisFill.fill = colorSet.getIndex(21);
 
   /**
    * Label
@@ -262,19 +270,19 @@ $(document).ready(function () {
   range0.value = 0;
   range0.endValue = 50;
   range0.axisFill.fillOpacity = 1;
-  range0.axisFill.fill = colorSet.getIndex(0);
+  range0.axisFill.fill = colorSet.getIndex(17);
 
   var range1 = axis.axisRanges.create();
   range1.value = 50;
   range1.endValue = 80;
   range1.axisFill.fillOpacity = 1;
-  range1.axisFill.fill = colorSet.getIndex(2);
+  range1.axisFill.fill = colorSet.getIndex(21);
 
   var range2 = axis.axisRanges.create();
   range2.value = 80;
   range2.endValue = 100;
   range2.axisFill.fillOpacity = 1;
-  range2.axisFill.fill = colorSet.getIndex(4);
+  range2.axisFill.fill = colorSet.getIndex(10);
 
   var hand = chart.hands.push(new am4charts.ClockHand());
   setInterval(function () {

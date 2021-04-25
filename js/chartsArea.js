@@ -36,8 +36,6 @@ function lightFan() {
         li1.push({ x: lights[1][u], y: lights[0][u] });
         li2.push({ x: lights[3][u], y: lights[2][u] });
       }
-
-      console.log(li1, li2);
       chart.updateSeries([
         { name: "Lights", data: li1 },
         { name: "Fans", data: li2 },
@@ -81,8 +79,6 @@ function TempLevel() {
         li1.push({ x: dat[1][u], y: dat[0][u] });
         li2.push({ x: dat[3][u], y: dat[2][u] });
       }
-
-      console.log(li1, li2);
       chart.updateSeries([
         { name: "Lights", data: li1 },
         { name: "Fans", data: li2 },

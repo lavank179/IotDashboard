@@ -32,20 +32,54 @@ $(document).ready(function () {
     getDataAll(v1, v2, v3, 32, "Soil Moisture", "s3chart", "sensors");
   }, 500);
 });
-function temChart(v1, v2, v3) {
+function temChart(v1, v2, v3, v4) {
+  let titl = "";
   google.charts.load("current", { packages: ["corechart"] });
   google.charts.setOnLoadCallback(drawBasic);
 
   function drawBasic() {
+    if (v4 == 30) titl = "Temperature  o C";
+    else if (v4 == 31) titl = "Humidity  % ";
+    else if (v4 == 32) titl = "Moisture  % ";
     var data = new google.visualization.DataTable(v1);
 
     var options = {
       title: v2,
+      titleTextStyle: {
+        color: "#00b377",
+        bold: true,
+      },
+      legend: { position: "right" },
+      colors: ["#00E396"],
+      curveType: "function",
       hAxis: {
         title: "Time",
+        titleTextStyle: {
+          color: "#00cc88",
+          bold: true,
+        },
+        format: "MMM d, y",
+        textStyle: {
+          color: "#1a5eff",
+        },
+        gridlines: {
+          color: "#6795FF",
+        },
+        baselineColor: "#6795FF",
       },
       vAxis: {
-        title: "Temperature oC",
+        title: titl,
+        titleTextStyle: {
+          color: "#00cc88",
+          bold: true,
+        },
+        textStyle: {
+          color: "#1a5eff",
+        },
+        gridlines: {
+          color: "#6795FF",
+        },
+        baselineColor: "#6795FF",
       },
     };
 

@@ -39,7 +39,7 @@ function getDataAll(v1, v2, v3, v4, v5, v6, v7) {
       if (v4 == 60) {
         if (h.length > 0) printChartPie(h, v5, v6);
       } else if (v4 == 30 || v4 == 31 || v4 == 32) {
-        temChart(h, v5, v6);
+        temChart(h, v5, v6, v4);
       } else {
         printChart(h, v5, v6);
       }
@@ -57,12 +57,41 @@ function printChart(h, title, id) {
 
     var options = {
       title: title,
+      titleTextStyle: {
+        color: "#00b377",
+        bold: true,
+      },
       legend: { position: "right" },
+      colors: ["#00E396"],
+      curveType: "function",
       hAxis: {
         title: "Time (hr)",
+        titleTextStyle: {
+          color: "#00cc88",
+          bold: true,
+        },
+        format: "MMM d, y",
+        textStyle: {
+          color: "#1a5eff",
+        },
+        gridlines: {
+          color: "#6795FF",
+        },
+        baselineColor: "#6795FF",
       },
       vAxis: {
         title: "Power (watts)",
+        titleTextStyle: {
+          color: "#00cc88",
+          bold: true,
+        },
+        textStyle: {
+          color: "#1a5eff",
+        },
+        gridlines: {
+          color: "#6795FF",
+        },
+        baselineColor: "#6795FF",
       },
     };
 
@@ -160,9 +189,24 @@ $(document).ready(function () {
 // Snippet to convert the data to CSV format and Download
 function getCSVdata(id, n) {
   let [v1, v2, v3] = getInputValues(id);
+  let url = "";
+
+  if (
+    n == 16 ||
+    n == 17 ||
+    n == 18 ||
+    n == 19 ||
+    n == 25 ||
+    n == 26 ||
+    n == 51 ||
+    n == 52
+  )
+    url = "./controllers/fetch/csvLF.php";
+  else if (n == 30 || n == 31 || n == 32)
+    url = "./controllers/fetch/csvSEN.php";
 
   $.ajax({
-    url: "./controllers/fetch/csvLF.php",
+    url: url,
     method: "POST",
     data: {
       fDate: v1 + " 00:00:00",
@@ -187,8 +231,7 @@ function getCSVdata(id, n) {
 
       const csv = h
         .map((row) =>
-          row
-            .map((item) =>
+          row.map((item) =>
               typeof item === "string" && item.indexOf(",") >= 0
                 ? `"${item}"`
                 : String(item)
