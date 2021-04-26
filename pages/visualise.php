@@ -54,7 +54,7 @@
                     <div class="col-sm-2">
                         <div class="md-form">
                             <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterLight1', 16)">
-                                <i class="fad fa-download"></i> Download as CSV
+                                <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                     <div class="col-sm-2">
                         <div class="md-form">
                             <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterLight2', 17)">
-                                <i class="fad fa-download"></i> Download as CSV
+                                <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                     <div class="col-sm-2">
                         <div class="md-form">
                             <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterLight3', 18)">
-                                <i class="fad fa-download"></i> Download as CSV
+                                <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>
                     </div>
@@ -167,7 +167,7 @@
                     <div class="col-sm-2">
                         <div class="md-form">
                             <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterLight4', 19)">
-                                <i class="fad fa-download"></i> Download as CSV
+                                <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>
                     </div>
@@ -205,7 +205,7 @@
                     <div class="col-sm-2">
                         <div class="md-form">
                             <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterLightAll', 51)">
-                                <i class="fad fa-download"></i> Download as CSV
+                                <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>
                     </div>
@@ -243,7 +243,7 @@
                     <div class="col-sm-2">
                         <div class="md-form">
                             <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterLightZones', 60)">
-                                <i class="fad fa-download"></i> Download as CSV
+                                <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>
                     </div>
@@ -316,7 +316,7 @@
                     <div class="col-sm-2">
                         <div class="md-form">
                             <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterFan1', 19)">
-                                <i class="fad fa-download"></i> Download as CSV
+                                <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>
                     </div>
@@ -354,7 +354,7 @@
                     <div class="col-sm-2">
                         <div class="md-form">
                             <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterFan2', 18)">
-                                <i class="fad fa-download"></i> Download as CSV
+                                <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>
                     </div>
@@ -392,7 +392,7 @@
                     <div class="col-sm-2">
                         <div class="md-form">
                             <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterFanAll', 52)">
-                                <i class="fad fa-download"></i> Download as CSV
+                                <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>
                     </div>
@@ -467,7 +467,7 @@
                     <div class="col-sm-2">
                         <div class="md-form">
                             <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterSen1', 30)">
-                                <i class="fad fa-download"></i> Download as CSV
+                                <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>
                     </div>
@@ -505,7 +505,7 @@
                     <div class="col-sm-2">
                         <div class="md-form">
                             <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterSen2', 31)">
-                                <i class="fad fa-download"></i> Download as CSV
+                                <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>
                     </div>
@@ -542,7 +542,7 @@
                     <div class="col-sm-2">
                         <div class="md-form">
                             <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterSen3', 32)">
-                                <i class="fad fa-download"></i> Download as CSV
+                                <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>
                     </div>

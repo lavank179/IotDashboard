@@ -53,7 +53,7 @@ if (!isset($_SESSION)) {
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none" onclick="Logout();" data-toggle="popover" data-content="Logout" data-placement="bottom" data-trigger="hover"> <i class="far fa-sign-out-alt d-inline"></i>
+                                <a class="nav-link btn-rounded1 btn btn-sm btn-outline-primary shadow-none" onclick="Logout();" data-toggle="popover" data-content="Logout" data-placement="bottom" data-trigger="hover"> <i class="fas fa-sign-out-alt d-inline"></i>
                                     <div class="d-lg-none d-md-block d-sm-block d-inline">Logout</div>
                                 </a>
                             </li>
