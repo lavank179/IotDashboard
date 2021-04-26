@@ -1,6 +1,17 @@
+// toggle between dashboard pages
 $("#bologna-listL a").on("click", function (e) {
   e.preventDefault();
   $(this).tab("show");
+  let alinks = ["lg1", "lg2", "lg3", "lg4", "lg5", "lg6"];
+  for (var i = 0; i < alinks.length; i++) {
+    if (alinks[i] == this.id) {
+      document.querySelector("#bologna-listL #" + alinks[i]).children[0].style.color = "black";
+      document.querySelector("#bologna-listL #" + alinks[i]).children[0].style.backgroundcolor = "white";
+    } else {
+      document.querySelector("#bologna-listL #" + alinks[i]).children[0].style.color = "white";
+      document.querySelector("#bologna-listL #" + alinks[i]).children[0].style.backgroundcolor = "black";
+    }
+  }
 });
 
 // Retrieve input values from respective input fields in visualize

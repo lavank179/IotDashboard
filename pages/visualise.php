@@ -1,39 +1,39 @@
-<div class="card">
+<div class="card bg-dark">
     <div class="col-sm-12 LIGHT">
         <ul class="nav nav-tabs" id="bologna-listL" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" href="#g1" role="tab" aria-controls="description" aria-selected="true">
+                <a class="nav-link active" href="#g1" role="tab" aria-controls="description" aria-selected="true" id="lg1">
                     <h6>Light 1</h6>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#g2" role="tab" aria-controls="history" aria-selected="false">
+                <a class="nav-link" href="#g2" role="tab" aria-controls="history" aria-selected="false" id="lg2">
                     <h6>Light 2</h6>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#g3" role="tab" aria-controls="deals" aria-selected="false">
+                <a class="nav-link" href="#g3" role="tab" aria-controls="deals" aria-selected="false" id="lg3">
                     <h6>Light 3</h6>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#g4" role="tab" aria-controls="deals" aria-selected="false">
+                <a class="nav-link" href="#g4" role="tab" aria-controls="deals" aria-selected="false" id="lg4">
                     <h6>Light 4</h6>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#g5" role="tab" aria-controls="deals" aria-selected="false">
+                <a class="nav-link" href="#g5" role="tab" aria-controls="deals" aria-selected="false" id="lg5">
                     <h6>All Lights</h6>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#g6" role="tab" aria-controls="deals" aria-selected="false">
+                <a class="nav-link" href="#g6" role="tab" aria-controls="deals" aria-selected="false" id="lg6">
                     <h6>Light Zones</h6>
                 </a>
             </li>
         </ul>
 
-        <div class="tab-content">
+        <div class="tab-content bg-dark">
 
             <div class="tab-pane" id="g1" role="tabpanel" aria-labelledby="history-tab">
                 <div class="filterLight1" role="alert">
@@ -275,27 +275,27 @@
 
 
 
-<div class="card">
+<div class="card bg-dark">
     <div class="col-sm-12 FAN">
         <ul class="nav nav-tabs" id="bologna-listF" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" href="#f1" role="tab" aria-controls="description" aria-selected="true">
+                <a class="nav-link active" href="#f1" role="tab" aria-controls="description" aria-selected="true" id="fn1">
                     <h6>Fan 1</h6>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#f2" role="tab" aria-controls="history" aria-selected="false">
+                <a class="nav-link" href="#f2" role="tab" aria-controls="history" aria-selected="false" id="fn2">
                     <h6>Fan 2</h6>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#f3" role="tab" aria-controls="history" aria-selected="false">
+                <a class="nav-link" href="#f3" role="tab" aria-controls="history" aria-selected="false" id="fn3">
                     <h6>All Fans</h6>
                 </a>
             </li>
         </ul>
 
-        <div class="tab-content">
+        <div class="tab-content bg-dark">
 
             <div class="tab-pane" id="f1" role="tabpanel" aria-labelledby="history-tab">
                 <div class="filterFan1" role="alert">
@@ -426,27 +426,27 @@
 
 
 
-<div class="card">
+<div class="card bg-dark">
     <div class="col-sm-12 FAN">
         <ul class="nav nav-tabs" id="bologna-listS" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" href="#T" role="tab" aria-controls="description" aria-selected="true">
+                <a class="nav-link active" href="#T" role="tab" aria-controls="description" aria-selected="true" id="tn1">
                     <h6>Temperature</h6>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#H" role="tab" aria-controls="history" aria-selected="false">
+                <a class="nav-link" href="#H" role="tab" aria-controls="history" aria-selected="false" id="tn2">
                     <h6>Humidity</h6>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#Soil" role="tab" aria-controls="history" aria-selected="false">
+                <a class="nav-link" href="#Soil" role="tab" aria-controls="history" aria-selected="false" id="tn3">
                     <h6>Soil Moisture</h6>
                 </a>
             </li>
         </ul>
 
-        <div class="tab-content">
+        <div class="tab-content bg-dark">
 
             <div class="tab-pane" id="T" role="tabpanel" aria-labelledby="history-tab">
                 <div class="filterSen1" role="alert">

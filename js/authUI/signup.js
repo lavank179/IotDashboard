@@ -75,7 +75,7 @@ $("form #cpassword").keyup(function () {
 });
 
 $("form #phone").keyup(function () {
-  var regx = /^([0|+[0-9]{1,5})?([7-9][0-9]{9})$/;
+  var regx = /^([0|+[0-9]{1,5})?([6-9][0-9]{9})$/;
   getInputVals(
     "phone",
     regx,

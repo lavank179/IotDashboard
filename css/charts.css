@@ -1,5 +1,5 @@
-#visualise a h6 {
-  font-family: "Lemonada";
+#visualise{
+  font-family: "Poppins";
 }
 
 #mobile-head {
@@ -75,12 +75,13 @@
   }
 }
 
-.popover{
-  border: 2px solid #4285F4;
+.popover {
+  border: 2px solid #4285f4;
 }
 
-.popover-content{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.popover-content {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .live2 {
@@ -100,5 +101,21 @@
 }
 
 #visualise .btn-secondary1 {
-  background-color: #00E396;
+  background-color: #00e396;
+}
+
+#visualise .nav #lg2 h6,
+#visualise .nav #lg3 h6,
+#visualise .nav #lg4 h6,
+#visualise .nav #lg5 h6,
+#visualise .nav #lg6 h6,
+#visualise .nav #fn2 h6,
+#visualise .nav #fn3 h6,
+#visualise .nav #tn2 h6,
+#visualise .nav #tn3 h6 {
+  color: white;
+}
+
+#visualise .nav a h6{
+  font-size: 1.2rem;
 }

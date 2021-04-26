@@ -1,6 +1,17 @@
+// toggle between dashboard pages
 $("#bologna-listS a").on("click", function (e) {
   e.preventDefault();
   $(this).tab("show");
+  let alinks = ["tn1", "tn2", "tn3"];
+  for (var i = 0; i < alinks.length; i++) {
+    if (alinks[i] == this.id) {
+      document.querySelector("#bologna-listS #" + alinks[i]).children[0].style.color = "black";
+      document.querySelector("#bologna-listS #" + alinks[i]).children[0].style.backgroundcolor = "white";
+    } else {
+      document.querySelector("#bologna-listS #" + alinks[i]).children[0].style.color = "white";
+      document.querySelector("#bologna-listS #" + alinks[i]).children[0].style.backgroundcolor = "black";
+    }
+  }
 });
 
 $(document).ready(function () {

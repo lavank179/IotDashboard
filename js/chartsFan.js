@@ -1,6 +1,17 @@
+// toggle between dashboard pages
 $("#bologna-listF a").on("click", function (e) {
   e.preventDefault();
   $(this).tab("show");
+  let alinks = ["fn1", "fn2", "fn3"];
+  for (var i = 0; i < alinks.length; i++) {
+    if (alinks[i] == this.id) {
+      document.querySelector("#bologna-listF #" + alinks[i]).children[0].style.color = "black";
+      document.querySelector("#bologna-listF #" + alinks[i]).children[0].style.backgroundcolor = "white";
+    } else {
+      document.querySelector("#bologna-listF #" + alinks[i]).children[0].style.color = "white";
+      document.querySelector("#bologna-listF #" + alinks[i]).children[0].style.backgroundcolor = "black";
+    }
+  }
 });
 
 $(document).ready(function () {
