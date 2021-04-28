@@ -315,7 +315,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterFan1', 19)">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterFan1', 25)">
                                 <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>
@@ -353,7 +353,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-2">
                         <div class="md-form">
-                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterFan2', 18)">
+                            <button id="sidebarCollapse" class="btn btn-secondary1 btn-block btn-md" onclick="getCSVdata('filterFan2', 26)">
                                 <i class="fas fa-download"></i> Download as CSV
                             </button>
                         </div>

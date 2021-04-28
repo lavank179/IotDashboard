@@ -20,7 +20,7 @@ $(document).ready(function () {
 
     changeAlert("filterFan1", v1, v2, v3);
 
-    getDataAll(v1, v2, v3, 16, "Fan 1", "f1chart", "fans");
+    getDataAll(v1, v2, v3, 25, "Fan 1", "f1chart", "fans");
   }, 500);
 });
 
@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     changeAlert("filterFan2", v1, v2, v3);
 
-    getDataAll(v1, v2, v3, 17, "Fan 2", "f2chart", "fans");
+    getDataAll(v1, v2, v3, 26, "Fan 2", "f2chart", "fans");
   }, 500);
 });
 

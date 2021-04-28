@@ -5,11 +5,19 @@ $("#bologna-listL a").on("click", function (e) {
   let alinks = ["lg1", "lg2", "lg3", "lg4", "lg5", "lg6"];
   for (var i = 0; i < alinks.length; i++) {
     if (alinks[i] == this.id) {
-      document.querySelector("#bologna-listL #" + alinks[i]).children[0].style.color = "black";
-      document.querySelector("#bologna-listL #" + alinks[i]).children[0].style.backgroundcolor = "white";
+      document.querySelector(
+        "#bologna-listL #" + alinks[i]
+      ).children[0].style.color = "black";
+      document.querySelector(
+        "#bologna-listL #" + alinks[i]
+      ).children[0].style.backgroundcolor = "white";
     } else {
-      document.querySelector("#bologna-listL #" + alinks[i]).children[0].style.color = "white";
-      document.querySelector("#bologna-listL #" + alinks[i]).children[0].style.backgroundcolor = "black";
+      document.querySelector(
+        "#bologna-listL #" + alinks[i]
+      ).children[0].style.color = "white";
+      document.querySelector(
+        "#bologna-listL #" + alinks[i]
+      ).children[0].style.backgroundcolor = "black";
     }
   }
 });
@@ -210,7 +218,8 @@ function getCSVdata(id, n) {
     n == 25 ||
     n == 26 ||
     n == 51 ||
-    n == 52
+    n == 52 ||
+    n == 60
   )
     url = "./controllers/fetch/csvLF.php";
   else if (n == 30 || n == 31 || n == 32)
@@ -242,7 +251,8 @@ function getCSVdata(id, n) {
 
       const csv = h
         .map((row) =>
-          row.map((item) =>
+          row
+            .map((item) =>
               typeof item === "string" && item.indexOf(",") >= 0
                 ? `"${item}"`
                 : String(item)

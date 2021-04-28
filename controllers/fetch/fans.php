@@ -6,11 +6,11 @@ if (isset($_POST['fils'])) {
   function getQuery($id, $f, $t, $fils)
   {
     if ($id == 50) {
-      $queryf = "SELECT SUM(total) AS powers, UNIX_TIMESTAMP(endTime) AS etime FROM fans WHERE (endtime BETWEEN '{$f}' AND '{$t}') GROUP BY " . $fils . "(endTime)";
+      $queryf = "SELECT SUM(total) AS powers, UNIX_TIMESTAMP(endTime) AS etime, UNIX_TIMESTAMP(startTime) as stime FROM fans WHERE (endtime BETWEEN '{$f}' AND '{$t}') GROUP BY " . $fils . "(endTime)";
     } elseif ($id == 60) {
-      $queryf = "SELECT SUM(total) AS powers, Did AS id FROM fans WHERE (endtime BETWEEN '{$f}' AND '{$t}') GROUP BY Did";
+      $queryf = "SELECT SUM(total) AS powers, Did AS id, UNIX_TIMESTAMP(startTime) as stime FROM fans WHERE (endtime BETWEEN '{$f}' AND '{$t}') GROUP BY Did";
     } else {
-      $queryf = "SELECT SUM(total) AS powers, UNIX_TIMESTAMP(endTime) AS etime FROM fans WHERE Did='{$id}' AND (endtime BETWEEN '{$f}' AND '{$t}') GROUP BY " . $fils . "(endTime)";
+      $queryf = "SELECT SUM(total) AS powers, UNIX_TIMESTAMP(endTime) AS etime, UNIX_TIMESTAMP(startTime) as stime FROM fans WHERE Did='{$id}' AND (endtime BETWEEN '{$f}' AND '{$t}') GROUP BY " . $fils . "(endTime)";
     }
 
     return $queryf;
@@ -30,10 +30,13 @@ if (isset($_POST['fils'])) {
 
   if ($Did == 60) {
     while ($row = mysqli_fetch_array($result)) {
+
+      $s = intval($row['etime']) - intval($row['stime']);
+      $dat = $s * (80/3600);
       $table[0][0] = "Power(W)";
       $table[0][1] = "Fan ID no.";
       $table[$i][0] = $row['id'];
-      $table[$j][1] = round(floatval($row['powers']), 3);
+      $table[$j][1] = round(floatval($dat), 3);
       $i += 1;
       $j += 1;
     }
@@ -52,13 +55,20 @@ if (isset($_POST['fils'])) {
     );
 
     while ($row = mysqli_fetch_array($result)) {
+      $samp = date('Y-m-d', $row['etime']);
+      if($samp == '2021-03-17' || $samp == '2021-03-18' || $samp == '2021-03-23'){
+        $s = intval(($row['stime'])) - intval(($row['etime']));
+      } else {
+        $s = intval(($row['etime'])) - intval(($row['stime']));
+      }
+      $dat = $s * (80/3600);
       $sub_array = array();
       $datetime = explode(".", $row["etime"]);
       $sub_array[] =  array(
         "v" => 'Date(' . $datetime[0] . '000)'
       );
       $sub_array[] =  array(
-        "v" => $row["powers"]
+        "v" => $dat
       );
       $rows[] =  array(
         "c" => $sub_array
